@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paul Skenes 2026 — full picture breakdown</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:#F7F8F6; --ink:#16202B; --rule:#C9D1CE; --mut:#6B7A78;
+    --a:#1F6F6B; --b:#8C3A5B; --c:#A9772A; --panel:#FFFFFF;
+  }
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+  body { margin:0; background:var(--paper); color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,sans-serif; font-size:17px; line-height:1.62; }
+  .wrap { max-width:860px; margin:0 auto; padding:0 28px 96px; }
+  p, li { max-width:68ch; }
+  h1,h2,h3 { font-family:"Zilla Slab",Georgia,serif; font-weight:600; line-height:1.18; margin:0; }
+  h1 { font-size:clamp(2rem,4.6vw,2.85rem); letter-spacing:-.015em; max-width:22ch; }
+  h2 { font-size:1.6rem; margin:3.6rem 0 .9rem; }
+  h2:first-of-type { margin-top:1.2rem; }
+  h3 { font-size:1.1rem; margin:2.3rem 0 .5rem; }
+  header { padding:56px 0 34px; border-bottom:2px solid var(--ink); }
+  .brand { font-size:.82rem; letter-spacing:.06em; color:var(--mut); margin-bottom:24px; }
+  .brand b { color:var(--ink); font-weight:600; }
+  .sub { font-size:1.1rem; color:var(--mut); margin-top:1rem; max-width:62ch; }
+  .meta { margin-top:2rem; display:flex; flex-wrap:wrap; gap:32px; font-size:.88rem; color:var(--mut); }
+  .meta b { display:block; font-family:"Zilla Slab",serif; font-size:1.4rem; color:var(--ink); font-weight:600; line-height:1.2; }
+
+  nav { position:sticky; top:0; z-index:20; background:var(--paper);
+    border-bottom:1px solid var(--rule); margin-bottom:34px; }
+  .tabs { max-width:860px; margin:0 auto; padding:0 28px; display:flex; gap:2px; overflow-x:auto; }
+  .tabs button { appearance:none; background:none; border:0; border-bottom:3px solid transparent;
+    font:inherit; font-size:.93rem; color:var(--mut); padding:14px 15px; cursor:pointer; white-space:nowrap; }
+  .tabs button:hover { color:var(--ink); }
+  .tabs button[aria-selected="true"] { color:var(--ink); font-weight:600; border-bottom-color:var(--ink); }
+  .tabs button:focus-visible { outline:2px solid var(--a); outline-offset:-2px; }
+  section[role="tabpanel"][hidden] { display:none; }
+
+  figure { margin:2.2rem 0 1rem; }
+  figure svg { width:100%; height:auto; display:block; }
+  figcaption { font-size:.87rem; color:var(--mut); margin-top:.8rem; max-width:66ch; }
+  .bleed { background:var(--panel); border:1px solid var(--rule); padding:24px 22px 18px; }
+  .lede { font-size:1.14rem; }
+  .finding { border-left:3px solid var(--a); padding:2px 0 2px 22px; margin:1.9rem 0;
+    font-family:"Zilla Slab",serif; font-size:1.26rem; line-height:1.42; max-width:36ch; }
+  .finding.neg { border-left-color:var(--b); }
+  table { border-collapse:collapse; width:100%; font-size:.87rem; margin:1.5rem 0; font-variant-numeric:tabular-nums; }
+  th { text-align:left; font-weight:600; font-size:.79rem; color:var(--mut); padding:0 11px 9px 0; border-bottom:1.5px solid var(--ink); }
+  th.n, td.n { text-align:right; padding-right:0; }
+  td { padding:8px 11px 8px 0; border-bottom:1px solid var(--rule); }
+  tr.off td { color:var(--mut); }
+  tr.pen td { background:rgba(31,111,107,.06); }
+  .stat { display:flex; flex-wrap:wrap; border-top:1.5px solid var(--ink); margin:1.9rem 0; }
+  .stat div { flex:1 1 145px; padding:15px 18px 15px 0; border-bottom:1px solid var(--rule); }
+  .stat b { display:block; font-family:"Zilla Slab",serif; font-size:1.62rem; font-weight:600; line-height:1.15; }
+  .stat span { font-size:.83rem; color:var(--mut); }
+  .pa b { color:var(--a); } .pb b { color:var(--b); }
+  .note { font-size:.9rem; color:var(--mut); border-top:1px solid var(--rule); padding-top:1.1rem; margin-top:2.4rem; }
+  footer { margin-top:4.5rem; padding-top:1.5rem; border-top:2px solid var(--ink); font-size:.84rem; color:var(--mut); }
+
+  .pickers { display:flex; flex-wrap:wrap; gap:18px; margin:1.6rem 0 .6rem; }
+  .pick { flex:1 1 280px; }
+  .pick label { display:block; font-size:.83rem; color:var(--mut); margin-bottom:6px; }
+  select { width:100%; font:inherit; font-size:.94rem; padding:10px 12px; color:var(--ink);
+    background:var(--panel); border:1.5px solid var(--ink); border-radius:0; }
+  select:focus-visible { outline:2px solid var(--a); outline-offset:1px; }
+  .shapebar { display:flex; gap:2px; margin:1.4rem 0 .2rem; }
+  .shapebar button { appearance:none; font:inherit; font-size:.85rem; padding:7px 14px; cursor:pointer;
+    background:var(--panel); border:1px solid var(--rule); color:var(--mut); }
+  .shapebar button[aria-pressed="true"] { background:var(--ink); border-color:var(--ink); color:#fff; }
+  .cmp td.d { text-align:right; font-weight:600; }
+  .up { color:var(--a); } .dn { color:var(--b); } .flat { color:var(--mut); }
+  .cmphead th { font-size:.83rem; color:var(--ink); }
+  .ctxtag { font-size:.74rem; color:var(--mut); font-weight:400; display:block; }
+  #cmpnote { font-size:.88rem; color:var(--mut); margin-top:1rem; max-width:66ch; }
+  @media (max-width:640px) { body { font-size:16px; } .wrap,.tabs { padding:0 18px; } .wrap { padding-bottom:64px; } }
+  @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header>
+  <div class="brand"><b>No Brand Baseball Analytics</b> &nbsp;·&nbsp; prepared for Derek Groomer</div>
+  <h1>Paul Skenes 2026: full picture breakdown</h1>
+  <p class="sub">Offseason bullpens, spring training, the World Baseball Classic and the regular season, on one set of conventions. What held from the winter, what changed, and what the changes did and did not cause.</p>
+  <div class="meta">
+    <div><b>3,132</b>pitches across 49 sessions and outings</div>
+    <div><b>Dec 12 – Aug 25</b>span covered</div>
+    <div><b>4</b>competition contexts</div>
+  </div>
+</header>
+</div>
+
+<nav>
+<div class="tabs" role="tablist" aria-label="Report sections">
+  <button role="tab" id="t-over" aria-controls="p-over" aria-selected="true">Overview</button>
+  <button role="tab" id="t-rel"  aria-controls="p-rel"  aria-selected="false">Release position</button>
+  <button role="tab" id="t-vel"  aria-controls="p-vel"  aria-selected="false">Velocity &amp; extension</button>
+  <button role="tab" id="t-spin" aria-controls="p-spin" aria-selected="false">Spin &amp; shape</button>
+  <button role="tab" id="t-cmp"  aria-controls="p-cmp"  aria-selected="false">Compare sessions</button>
+  <button role="tab" id="t-data" aria-controls="p-data" aria-selected="false">Session data</button>
+</div>
+</nav>
+
+<div class="wrap">
+
+<!-- ============ OVERVIEW ============ -->
+<section role="tabpanel" id="p-over" aria-labelledby="t-over">
+<p class="lede">Three things changed between the winter and the summer, and they are not the same thing. His rubber setup went from a rehearsed two-position system to a single spot. His velocity and extension built cleanly and then held all season. His fastball spin fell and kept falling. The first is a mechanical decision, the second is a healthy build, and the third is unexplained by either.</p>
+
+<h2>Every context, side by side</h2>
+<p>Fastball figures throughout, so the contexts are comparable. Bullpens are shaded.</p>
+<table>
+<thead><tr><th>Context</th><th class="n">Units</th><th class="n">Pitches</th><th class="n">Velo</th><th class="n">Spin</th><th class="n">IVB</th><th class="n">Ext</th><th class="n">Rel side</th><th class="n">Rel ht</th></tr></thead>
+<tbody>
+<tr class="pen"><td>Offseason bullpens</td><td class="n">17</td><td class="n">402</td><td class="n">90.7</td><td class="n">2212</td><td class="n">15.7</td><td class="n">5.78</td><td class="n">-2.766</td><td class="n">5.675</td></tr>
+<tr><td>Spring training</td><td class="n">2</td><td class="n">118</td><td class="n">96.5</td><td class="n">2271</td><td class="n">11.9</td><td class="n">6.68</td><td class="n">-2.749</td><td class="n">5.652</td></tr>
+<tr><td>WBC tune-up</td><td class="n">1</td><td class="n">40</td><td class="n">97.9</td><td class="n">2235</td><td class="n">11.9</td><td class="n">6.63</td><td class="n">-2.788</td><td class="n">5.62</td></tr>
+<tr><td>World Baseball Classic</td><td class="n">2</td><td class="n">131</td><td class="n">97.5</td><td class="n">2247</td><td class="n">11.8</td><td class="n">6.68</td><td class="n">-2.845</td><td class="n">5.665</td></tr>
+<tr><td>March (regular season)</td><td class="n">1</td><td class="n">37</td><td class="n">97.8</td><td class="n">2381</td><td class="n">12.0</td><td class="n">6.81</td><td class="n">-2.778</td><td class="n">5.72</td></tr>
+<tr><td>April (regular season)</td><td class="n">6</td><td class="n">511</td><td class="n">97.1</td><td class="n">2237</td><td class="n">11.3</td><td class="n">6.81</td><td class="n">-2.631</td><td class="n">5.596</td></tr>
+<tr><td>May (regular season)</td><td class="n">5</td><td class="n">488</td><td class="n">96.9</td><td class="n">2191</td><td class="n">11.8</td><td class="n">6.72</td><td class="n">-2.357</td><td class="n">5.661</td></tr>
+<tr><td>June (regular season)</td><td class="n">5</td><td class="n">516</td><td class="n">96.7</td><td class="n">2153</td><td class="n">12.1</td><td class="n">6.77</td><td class="n">-2.247</td><td class="n">5.644</td></tr>
+<tr><td>July (regular season)</td><td class="n">6</td><td class="n">563</td><td class="n">96.5</td><td class="n">2114</td><td class="n">12.3</td><td class="n">6.78</td><td class="n">-2.085</td><td class="n">5.587</td></tr>
+<tr><td>August (regular season)</td><td class="n">4</td><td class="n">326</td><td class="n">96.7</td><td class="n">2116</td><td class="n">11.2</td><td class="n">6.79</td><td class="n">-2.488</td><td class="n">5.59</td></tr>
+</tbody>
+</table>
+
+<figure class="bleed">
+<svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mean release side for every bullpen and outing">
+<line x1="58" y1="117.1" x2="740" y2="117.1" stroke="#1F6F6B" stroke-width="1.4" stroke-dasharray="5 4"/>
+<text x="740" y="110.1" fill="#1F6F6B" font-size="11.5" text-anchor="end" font-family="IBM Plex Sans">rehearsed position A</text>
+<line x1="58" y1="198.2" x2="740" y2="198.2" stroke="#8C3A5B" stroke-width="1.4" stroke-dasharray="5 4"/>
+<text x="740" y="191.2" fill="#8C3A5B" font-size="11.5" text-anchor="end" font-family="IBM Plex Sans">rehearsed position B</text>
+<text x="49" y="220.4" fill="#6B7A78" font-size="11.5" text-anchor="end" font-family="IBM Plex Sans">-3.2</text>
+<text x="49" y="165.2" fill="#6B7A78" font-size="11.5" text-anchor="end" font-family="IBM Plex Sans">-2.8</text>
+<text x="49" y="109.9" fill="#6B7A78" font-size="11.5" text-anchor="end" font-family="IBM Plex Sans">-2.4</text>
+<text x="49" y="54.7" fill="#6B7A78" font-size="11.5" text-anchor="end" font-family="IBM Plex Sans">-2.0</text>
+<path d="M58.0,133.5 L72.2,121.9 L86.4,143.7 L100.6,155.9 L114.8,138.2 L129.0,170.2 L143.2,148.6 L157.5,194.0 L171.7,153.0 L185.9,152.9 L200.1,176.7 L214.3,205.1 L228.5,190.4 L242.7,175.4 L256.9,156.5 L271.1,184.4 L285.3,165.7 L299.5,167.0 L313.8,159.0 L328.0,191.1 L342.2,160.1 L356.4,145.2 L370.6,173.3 L384.8,143.5 L399.0,159.0 L413.2,95.9 L427.4,125.0 L441.6,119.7 L455.8,141.1 L470.0,104.1 L484.2,79.3 L498.5,112.8 L512.7,94.2 L526.9,84.9 L541.1,128.4 L555.3,77.6 L569.5,71.2 L583.7,64.0 L597.9,66.9 L612.1,80.3 L626.3,55.5 L640.5,65.8 L654.8,59.5 L669.0,63.5 L683.2,50.8 L697.4,51.5 L711.6,120.7 L725.8,157.2 L740.0,132.7" fill="none" stroke="#16202B" stroke-width="1.5" opacity="0.3"/>
+<circle cx="58.0" cy="133.5" r="4" fill="#6B7A78"/>
+<circle cx="72.2" cy="121.9" r="4" fill="#6B7A78"/>
+<circle cx="86.4" cy="143.7" r="4" fill="#6B7A78"/>
+<circle cx="100.6" cy="155.9" r="4" fill="#6B7A78"/>
+<circle cx="114.8" cy="138.2" r="4" fill="#6B7A78"/>
+<circle cx="129.0" cy="170.2" r="4" fill="#6B7A78"/>
+<circle cx="143.2" cy="148.6" r="4" fill="#6B7A78"/>
+<circle cx="157.5" cy="194.0" r="4" fill="#6B7A78"/>
+<circle cx="171.7" cy="153.0" r="4" fill="#6B7A78"/>
+<circle cx="185.9" cy="152.9" r="4" fill="#6B7A78"/>
+<circle cx="200.1" cy="176.7" r="4" fill="#6B7A78"/>
+<circle cx="214.3" cy="205.1" r="4" fill="#6B7A78"/>
+<circle cx="228.5" cy="190.4" r="4" fill="#6B7A78"/>
+<circle cx="242.7" cy="175.4" r="4" fill="#6B7A78"/>
+<circle cx="256.9" cy="156.5" r="4" fill="#6B7A78"/>
+<circle cx="271.1" cy="184.4" r="4" fill="#6B7A78"/>
+<circle cx="285.3" cy="165.7" r="4" fill="#6B7A78"/>
+<circle cx="299.5" cy="167.0" r="4" fill="#A9772A"/>
+<circle cx="313.8" cy="159.0" r="4" fill="#A9772A"/>
+<circle cx="328.0" cy="191.1" r="4" fill="#A9772A"/>
+<circle cx="342.2" cy="160.1" r="4" fill="#A9772A"/>
+<circle cx="356.4" cy="145.2" r="4" fill="#A9772A"/>
+<circle cx="370.6" cy="173.3" r="4" fill="#16202B"/>
+<circle cx="384.8" cy="143.5" r="4" fill="#16202B"/>
+<circle cx="399.0" cy="159.0" r="4" fill="#16202B"/>
+<circle cx="413.2" cy="95.9" r="4" fill="#16202B"/>
+<circle cx="427.4" cy="125.0" r="4" fill="#16202B"/>
+<circle cx="441.6" cy="119.7" r="4" fill="#16202B"/>
+<circle cx="455.8" cy="141.1" r="4" fill="#16202B"/>
+<circle cx="470.0" cy="104.1" r="4" fill="#16202B"/>
+<circle cx="484.2" cy="79.3" r="4" fill="#16202B"/>
+<circle cx="498.5" cy="112.8" r="4" fill="#16202B"/>
+<circle cx="512.7" cy="94.2" r="4" fill="#16202B"/>
+<circle cx="526.9" cy="84.9" r="4" fill="#16202B"/>
+<circle cx="541.1" cy="128.4" r="4" fill="#16202B"/>
+<circle cx="555.3" cy="77.6" r="4" fill="#16202B"/>
+<circle cx="569.5" cy="71.2" r="4" fill="#16202B"/>
+<circle cx="583.7" cy="64.0" r="4" fill="#16202B"/>
+<circle cx="597.9" cy="66.9" r="4" fill="#16202B"/>
+<circle cx="612.1" cy="80.3" r="4" fill="#16202B"/>
+<circle cx="626.3" cy="55.5" r="4" fill="#16202B"/>
+<circle cx="640.5" cy="65.8" r="4" fill="#16202B"/>
+<circle cx="654.8" cy="59.5" r="4" fill="#16202B"/>
+<circle cx="669.0" cy="63.5" r="4" fill="#16202B"/>
+<circle cx="683.2" cy="50.8" r="4" fill="#16202B"/>
+<circle cx="697.4" cy="51.5" r="4" fill="#16202B"/>
+<circle cx="711.6" cy="120.7" r="4" fill="#16202B"/>
+<circle cx="725.8" cy="157.2" r="4" fill="#16202B"/>
+<circle cx="740.0" cy="132.7" r="4" fill="#16202B"/>
+<text x="58.0" y="264.0" fill="#6B7A78" font-size="11.5" text-anchor="middle" font-family="IBM Plex Sans">Dec 12</text>
+<text x="299.5" y="264.0" fill="#6B7A78" font-size="11.5" text-anchor="middle" font-family="IBM Plex Sans">Feb 25</text>
+<text x="370.6" y="264.0" fill="#6B7A78" font-size="11.5" text-anchor="middle" font-family="IBM Plex Sans">Mar 26</text>
+<text x="740.0" y="264.0" fill="#6B7A78" font-size="11.5" text-anchor="middle" font-family="IBM Plex Sans">Aug 25</text>
+<circle cx="62" cy="284" r="4" fill="#6B7A78"/>
+<text x="72" y="288" fill="#6B7A78" font-size="12" font-family="IBM Plex Sans">bullpen</text>
+<circle cx="130.2" cy="284" r="4" fill="#A9772A"/>
+<text x="140.2" y="288" fill="#6B7A78" font-size="12" font-family="IBM Plex Sans">spring / WBC</text>
+<circle cx="231.39999999999998" cy="284" r="4" fill="#16202B"/>
+<text x="241.39999999999998" y="288" fill="#6B7A78" font-size="12" font-family="IBM Plex Sans">regular season</text>
+</svg>
+<figcaption>Mean fastball release side for every bullpen and outing in order. Dashed lines mark the two positions he rehearsed all winter. He sits between them through March, drifts past both by July, and returns in August.</figcaption>
+</figure>
+
+<h2>The three storylines</h2>
+<h3>Release position — a system built, then abandoned</h3>
+<p>Fifteen of seventeen bullpens show alternating work between two rubber positions 7.0 inches apart. Those positions map onto right- and left-handed hitters in spring and the Classic to within half an inch. By July the distinction is gone.</p>
+<h3>Velocity and extension — the build worked</h3>
+<p>Both climb together from December into spring and then stay put. Nothing in this channel looks like a problem at any point in the year.</p>
+<h3>Spin — falling, and not because of release</h3>
+<p>Fastball spin runs from 2,405 rpm in March to about 2,120 by July and does not recover when the release does. Whatever is driving it is not in the release geometry.</p>
+</section>
+
+<!-- ============ RELEASE ============ -->
+<section role="tabpanel" id="p-rel" aria-labelledby="t-rel" hidden>
+<p class="lede">Every bullpen from December 12 through February 6 splits into alternating runs of pitches at two distinct release positions. Not scatter — blocks. He throws a set from one spot, moves, throws a set from the other.</p>
+
+<figure class="bleed">
+<svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two rubber positions 7 inches apart">
+<rect x="0" y="0" width="760" height="300" fill="none"/>
+<rect x="260.0" y="150" width="240.0" height="34" fill="#16202B" opacity="0.09" stroke="#16202B" stroke-width="1.2"/>
+<text x="380" y="206" fill="#6B7A78" font-size="12" text-anchor="middle" font-family="IBM Plex Sans">pitching rubber, 24 in</text>
+<line x1="424.1" y1="98" x2="424.1" y2="188" stroke="#1F6F6B" stroke-width="2.5"/>
+<circle cx="424.1" cy="98" r="7" fill="#1F6F6B"/>
+<text x="424.1" y="76" fill="#1F6F6B" font-size="15" font-weight="600" text-anchor="middle" font-family="Zilla Slab">Position A</text>
+<text x="424.1" y="94" fill="#6B7A78" font-size="12.5" text-anchor="middle" font-family="IBM Plex Sans">-2.48 ft</text>
+<line x1="336.0" y1="98" x2="336.0" y2="188" stroke="#8C3A5B" stroke-width="2.5"/>
+<circle cx="336.0" cy="98" r="7" fill="#8C3A5B"/>
+<text x="336.0" y="76" fill="#8C3A5B" font-size="15" font-weight="600" text-anchor="middle" font-family="Zilla Slab">Position B</text>
+<text x="336.0" y="94" fill="#6B7A78" font-size="12.5" text-anchor="middle" font-family="IBM Plex Sans">-3.07 ft</text>
+<line x1="336.0" y1="240" x2="424.1" y2="240" stroke="#16202B" stroke-width="1.2"/>
+<line x1="424.1" y1="234" x2="424.1" y2="246" stroke="#16202B" stroke-width="1.2"/>
+<line x1="336.0" y1="234" x2="336.0" y2="246" stroke="#16202B" stroke-width="1.2"/>
+<text x="380.1" y="266" fill="#16202B" font-size="17" font-weight="600" text-anchor="middle" font-family="Zilla Slab">7.0 inches</text>
+<text x="380.1" y="286" fill="#6B7A78" font-size="12.5" text-anchor="middle" font-family="IBM Plex Sans">measured in 15 of 17 offseason bullpens</text>
+</svg>
+<figcaption>Mean release side at each position across all sessions where the pattern was detectable. More negative is further to the arm side.</figcaption>
+</figure>
+
+<p>The pattern appears in <b>15 of 17 sessions</b>. The two exceptions are the seven-pitch and ten-pitch bullpens, too small to detect blocks in — a limit of the sample, not evidence he skipped it.</p>
+
+<figure>
+<svg viewBox="0 0 792 406" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Release side by pitch order for each bullpen">
+<rect x="0" y="26" width="118" height="92" fill="#fff" stroke="#C9D1CE" stroke-width="1"/>
+<line x1="0" y1="73.3" x2="118" y2="73.3" stroke="#C9D1CE" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="5.0" cy="98.6" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="13.3" cy="76.1" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="21.6" cy="91.4" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="29.9" cy="97.6" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="38.2" cy="70.5" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="46.5" cy="67.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="54.8" cy="72.0" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="63.2" cy="65.9" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="71.5" cy="95.5" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="79.8" cy="67.9" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="88.1" cy="96.0" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="96.4" cy="94.5" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="104.7" cy="93.0" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="113.0" cy="64.8" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<text x="0" y="14" fill="#16202B" font-size="12.5" font-weight="600" font-family="Zilla Slab">Dec 12</text>
+<text x="118" y="14" fill="#16202B" font-size="11" text-anchor="end" font-family="IBM Plex Sans">6.1 in</text>
+<rect x="132" y="26" width="118" height="92" fill="#fff" stroke="#C9D1CE" stroke-width="1"/>
+<line x1="132" y1="73.3" x2="250" y2="73.3" stroke="#C9D1CE" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="137.0" cy="78.6" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="143.4" cy="101.1" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="149.7" cy="106.8" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="156.1" cy="96.0" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="162.4" cy="101.1" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="168.8" cy="104.7" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="175.1" cy="100.1" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="181.5" cy="78.1" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="187.8" cy="72.0" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="194.2" cy="73.0" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="200.5" cy="73.0" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="206.9" cy="71.0" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="213.2" cy="73.0" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="219.6" cy="73.5" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="225.9" cy="75.1" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="232.3" cy="99.6" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="238.6" cy="96.5" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="245.0" cy="84.3" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<text x="132" y="14" fill="#16202B" font-size="12.5" font-weight="600" font-family="Zilla Slab">Dec 16</text>
+<text x="250" y="14" fill="#16202B" font-size="11" text-anchor="end" font-family="IBM Plex Sans">6.0 in</text>
+<rect x="264" y="26" width="118" height="92" fill="#fff" stroke="#C9D1CE" stroke-width="1"/>
+<line x1="264" y1="73.3" x2="382" y2="73.3" stroke="#C9D1CE" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="269.0" cy="96.5" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="274.7" cy="98.6" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="280.4" cy="103.7" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="286.1" cy="105.7" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="291.7" cy="71.5" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="297.4" cy="103.2" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="303.1" cy="98.1" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="308.8" cy="87.3" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="314.5" cy="100.6" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="320.2" cy="74.0" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="325.8" cy="77.1" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="331.5" cy="65.9" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="337.2" cy="66.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="342.9" cy="67.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="348.6" cy="70.0" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="354.3" cy="63.8" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="359.9" cy="69.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="365.6" cy="72.5" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="371.3" cy="37.2" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="377.0" cy="40.3" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<text x="264" y="14" fill="#16202B" font-size="12.5" font-weight="600" font-family="Zilla Slab">Dec 19</text>
+<text x="382" y="14" fill="#16202B" font-size="11" text-anchor="end" font-family="IBM Plex Sans">8.1 in</text>
+<rect x="396" y="26" width="118" height="92" fill="#fff" stroke="#C9D1CE" stroke-width="1"/>
+<line x1="396" y1="73.3" x2="514" y2="73.3" stroke="#C9D1CE" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="401.0" cy="60.8" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="405.3" cy="65.9" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="409.6" cy="61.3" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="414.0" cy="61.8" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="418.3" cy="65.9" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="422.6" cy="89.4" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="426.9" cy="88.9" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="431.2" cy="103.2" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="435.6" cy="102.7" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="439.9" cy="67.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="444.2" cy="63.8" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="448.5" cy="68.9" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="452.8" cy="95.0" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="457.2" cy="99.6" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="461.5" cy="93.5" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="465.8" cy="59.2" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="470.1" cy="63.8" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="474.4" cy="96.5" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="478.8" cy="90.4" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="483.1" cy="62.3" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="487.4" cy="51.0" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="491.7" cy="64.8" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="496.0" cy="58.7" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="500.4" cy="64.8" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="504.7" cy="61.3" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="509.0" cy="62.3" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<text x="396" y="14" fill="#16202B" font-size="12.5" font-weight="600" font-family="Zilla Slab">Dec 23</text>
+<text x="514" y="14" fill="#16202B" font-size="11" text-anchor="end" font-family="IBM Plex Sans">7.7 in</text>
+<rect x="528" y="26" width="118" height="92" fill="#fff" stroke="#C9D1CE" stroke-width="1"/>
+<line x1="528" y1="73.3" x2="646" y2="73.3" stroke="#C9D1CE" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="533.0" cy="94.5" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="538.7" cy="95.0" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="544.4" cy="94.5" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="550.1" cy="88.9" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="555.7" cy="90.9" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="561.4" cy="69.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="567.1" cy="67.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="572.8" cy="66.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="578.5" cy="68.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="584.2" cy="59.2" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="589.8" cy="95.5" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="595.5" cy="94.0" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="601.2" cy="92.4" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="606.9" cy="63.3" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="612.6" cy="59.2" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="618.3" cy="63.3" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="623.9" cy="65.9" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="629.6" cy="94.5" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="635.3" cy="94.5" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="641.0" cy="92.4" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<text x="528" y="14" fill="#16202B" font-size="12.5" font-weight="600" font-family="Zilla Slab">Dec 31</text>
+<text x="646" y="14" fill="#16202B" font-size="11" text-anchor="end" font-family="IBM Plex Sans">6.7 in</text>
+<rect x="660" y="26" width="118" height="92" fill="#fff" stroke="#C9D1CE" stroke-width="1"/>
+<line x1="660" y1="73.3" x2="778" y2="73.3" stroke="#C9D1CE" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="665.0" cy="53.1" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="683.0" cy="58.7" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="701.0" cy="91.4" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="719.0" cy="89.4" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="737.0" cy="67.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="755.0" cy="60.8" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="773.0" cy="59.7" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<text x="660" y="14" fill="#16202B" font-size="12.5" font-weight="600" font-family="Zilla Slab">Jan 2</text>
+<text x="778" y="14" fill="#6B7A78" font-size="11" text-anchor="end" font-family="IBM Plex Sans">n=7, too few</text>
+<rect x="0" y="158" width="118" height="92" fill="#fff" stroke="#C9D1CE" stroke-width="1"/>
+<line x1="0" y1="205.3" x2="118" y2="205.3" stroke="#C9D1CE" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="5.0" cy="229.0" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="11.0" cy="226.5" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="17.0" cy="219.8" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="23.0" cy="223.9" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="29.0" cy="227.0" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="35.0" cy="216.8" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="41.0" cy="194.8" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="47.0" cy="196.8" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="53.0" cy="199.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="59.0" cy="198.9" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="65.0" cy="198.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="71.0" cy="200.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="77.0" cy="231.1" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="83.0" cy="202.5" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="89.0" cy="193.8" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="95.0" cy="203.0" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="101.0" cy="204.5" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="107.0" cy="196.8" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="113.0" cy="200.9" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<text x="0" y="146" fill="#16202B" font-size="12.5" font-weight="600" font-family="Zilla Slab">Jan 6</text>
+<text x="118" y="146" fill="#16202B" font-size="11" text-anchor="end" font-family="IBM Plex Sans">6.0 in</text>
+<rect x="132" y="158" width="118" height="92" fill="#fff" stroke="#C9D1CE" stroke-width="1"/>
+<line x1="132" y1="205.3" x2="250" y2="205.3" stroke="#C9D1CE" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="137.0" cy="179.5" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="142.7" cy="185.1" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="148.4" cy="189.2" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="154.1" cy="181.5" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="159.7" cy="202.0" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="165.4" cy="216.3" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="171.1" cy="211.2" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="176.8" cy="205.5" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="182.5" cy="187.1" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="188.2" cy="177.9" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="193.8" cy="186.1" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="199.5" cy="211.2" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="205.2" cy="210.6" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="210.9" cy="199.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="216.6" cy="201.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="222.3" cy="172.3" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="227.9" cy="182.0" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="233.6" cy="182.5" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="239.3" cy="178.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="245.0" cy="177.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<text x="132" y="146" fill="#16202B" font-size="12.5" font-weight="600" font-family="Zilla Slab">Jan 12</text>
+<text x="250" y="146" fill="#16202B" font-size="11" text-anchor="end" font-family="IBM Plex Sans">6.0 in</text>
+<rect x="264" y="158" width="118" height="92" fill="#fff" stroke="#C9D1CE" stroke-width="1"/>
+<line x1="264" y1="205.3" x2="382" y2="205.3" stroke="#C9D1CE" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="269.0" cy="227.5" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="272.1" cy="233.1" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="275.2" cy="231.1" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="278.3" cy="231.6" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="281.3" cy="221.4" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="284.4" cy="227.0" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="287.5" cy="230.1" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="290.6" cy="199.9" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="293.7" cy="191.2" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="296.8" cy="200.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="299.9" cy="195.3" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="302.9" cy="198.9" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="306.0" cy="187.1" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="309.1" cy="183.6" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="312.2" cy="179.5" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="315.3" cy="184.6" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="318.4" cy="219.8" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="321.5" cy="219.3" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="324.5" cy="219.8" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="327.6" cy="217.3" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="330.7" cy="187.6" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="333.8" cy="184.1" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="336.9" cy="186.6" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="340.0" cy="186.1" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="343.1" cy="220.9" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="346.1" cy="213.7" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="349.2" cy="225.0" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="352.3" cy="185.1" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="355.4" cy="181.5" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="358.5" cy="188.7" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="361.6" cy="232.1" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="364.7" cy="224.4" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="367.7" cy="231.1" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="370.8" cy="225.0" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="373.9" cy="189.7" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="377.0" cy="192.8" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<text x="264" y="146" fill="#16202B" font-size="12.5" font-weight="600" font-family="Zilla Slab">Jan 15</text>
+<text x="382" y="146" fill="#16202B" font-size="11" text-anchor="end" font-family="IBM Plex Sans">8.4 in</text>
+<rect x="396" y="158" width="118" height="92" fill="#fff" stroke="#C9D1CE" stroke-width="1"/>
+<line x1="396" y1="205.3" x2="514" y2="205.3" stroke="#C9D1CE" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="401.0" cy="230.1" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="407.4" cy="225.0" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="413.7" cy="224.4" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="420.1" cy="219.8" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="426.4" cy="193.8" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="432.8" cy="202.5" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="439.1" cy="196.3" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="445.5" cy="196.3" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="451.8" cy="195.3" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="458.2" cy="191.2" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="464.5" cy="196.3" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="470.9" cy="188.7" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="477.2" cy="193.8" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="483.6" cy="180.0" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="489.9" cy="221.9" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="496.3" cy="218.8" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="502.6" cy="228.0" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="509.0" cy="225.0" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<text x="396" y="146" fill="#16202B" font-size="12.5" font-weight="600" font-family="Zilla Slab">Jan 18</text>
+<text x="514" y="146" fill="#16202B" font-size="11" text-anchor="end" font-family="IBM Plex Sans">7.2 in</text>
+<rect x="528" y="158" width="118" height="92" fill="#fff" stroke="#C9D1CE" stroke-width="1"/>
+<line x1="528" y1="205.3" x2="646" y2="205.3" stroke="#C9D1CE" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="533.0" cy="215.8" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="535.4" cy="218.8" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="537.8" cy="213.7" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="540.2" cy="218.8" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="542.6" cy="203.5" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="545.0" cy="214.7" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="547.4" cy="214.2" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="549.8" cy="189.2" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="552.2" cy="185.6" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="554.6" cy="180.0" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="557.0" cy="185.1" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="559.4" cy="184.1" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="561.8" cy="177.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="564.2" cy="180.5" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="566.6" cy="181.0" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="569.0" cy="185.1" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="571.4" cy="179.5" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="573.8" cy="201.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="576.2" cy="200.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="578.6" cy="175.9" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="581.0" cy="173.8" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="583.4" cy="207.6" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="585.8" cy="211.2" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="588.2" cy="201.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="590.6" cy="205.0" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="593.0" cy="205.0" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="595.4" cy="185.1" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="597.8" cy="174.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="600.2" cy="175.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="602.6" cy="174.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="605.0" cy="214.2" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="607.4" cy="213.2" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="609.8" cy="212.7" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="612.2" cy="224.4" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="614.6" cy="215.2" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="617.0" cy="189.7" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="619.4" cy="185.1" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="621.8" cy="183.0" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="624.2" cy="185.6" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="626.6" cy="184.1" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="629.0" cy="211.7" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="631.4" cy="219.3" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="633.8" cy="207.1" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="636.2" cy="213.7" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="638.6" cy="222.9" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="641.0" cy="218.8" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<text x="528" y="146" fill="#16202B" font-size="12.5" font-weight="600" font-family="Zilla Slab">Jan 21</text>
+<text x="646" y="146" fill="#16202B" font-size="11" text-anchor="end" font-family="IBM Plex Sans">7.2 in</text>
+<rect x="660" y="158" width="118" height="92" fill="#fff" stroke="#C9D1CE" stroke-width="1"/>
+<line x1="660" y1="205.3" x2="778" y2="205.3" stroke="#C9D1CE" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="665.0" cy="188.2" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="677.0" cy="188.2" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="689.0" cy="187.6" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="701.0" cy="185.1" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="713.0" cy="183.6" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="725.0" cy="218.3" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="737.0" cy="215.8" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="749.0" cy="190.2" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="761.0" cy="187.1" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="773.0" cy="187.6" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<text x="660" y="146" fill="#16202B" font-size="12.5" font-weight="600" font-family="Zilla Slab">Jan 26 a</text>
+<text x="778" y="146" fill="#6B7A78" font-size="11" text-anchor="end" font-family="IBM Plex Sans">n=10, too few</text>
+<rect x="0" y="290" width="118" height="92" fill="#fff" stroke="#C9D1CE" stroke-width="1"/>
+<line x1="0" y1="337.3" x2="118" y2="337.3" stroke="#C9D1CE" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="5.0" cy="348.8" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="7.5" cy="351.8" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="9.9" cy="344.7" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="12.4" cy="319.6" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="14.8" cy="308.9" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="17.3" cy="308.9" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="19.7" cy="342.6" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="22.2" cy="316.1" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="24.6" cy="313.0" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="27.1" cy="339.6" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="29.5" cy="337.0" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="32.0" cy="342.6" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="34.5" cy="335.5" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="36.9" cy="301.8" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="39.4" cy="308.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="41.8" cy="335.5" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="44.3" cy="345.2" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="46.7" cy="325.3" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="49.2" cy="300.2" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="51.6" cy="299.2" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="54.1" cy="303.3" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="56.5" cy="308.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="59.0" cy="331.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="61.5" cy="338.6" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="63.9" cy="334.5" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="66.4" cy="308.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="68.8" cy="304.8" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="71.3" cy="296.1" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="73.7" cy="293.1" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="76.2" cy="335.0" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="78.6" cy="332.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="81.1" cy="301.2" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="83.5" cy="300.2" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="86.0" cy="304.3" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="88.5" cy="301.2" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="90.9" cy="342.6" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="93.4" cy="340.6" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="95.8" cy="309.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="98.3" cy="317.6" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="100.7" cy="303.8" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="103.2" cy="312.5" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="105.6" cy="307.9" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="108.1" cy="311.5" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="110.5" cy="304.8" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="113.0" cy="320.2" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<text x="0" y="278" fill="#16202B" font-size="12.5" font-weight="600" font-family="Zilla Slab">Jan 26 b</text>
+<text x="118" y="278" fill="#16202B" font-size="11" text-anchor="end" font-family="IBM Plex Sans">7.6 in</text>
+<rect x="132" y="290" width="118" height="92" fill="#fff" stroke="#C9D1CE" stroke-width="1"/>
+<line x1="132" y1="337.3" x2="250" y2="337.3" stroke="#C9D1CE" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="137.0" cy="351.8" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="144.7" cy="350.3" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="152.4" cy="349.3" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="160.1" cy="341.1" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="167.9" cy="323.2" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="175.6" cy="316.6" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="183.3" cy="317.6" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="191.0" cy="318.1" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="198.7" cy="316.6" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="206.4" cy="315.6" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="214.1" cy="305.8" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="221.9" cy="342.6" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="229.6" cy="339.6" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="237.3" cy="331.9" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="245.0" cy="340.6" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<text x="132" y="278" fill="#16202B" font-size="12.5" font-weight="600" font-family="Zilla Slab">Jan 29</text>
+<text x="250" y="278" fill="#16202B" font-size="11" text-anchor="end" font-family="IBM Plex Sans">6.4 in</text>
+<rect x="264" y="290" width="118" height="92" fill="#fff" stroke="#C9D1CE" stroke-width="1"/>
+<line x1="264" y1="337.3" x2="382" y2="337.3" stroke="#C9D1CE" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="269.0" cy="358.0" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="271.3" cy="358.0" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="273.7" cy="355.9" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="276.0" cy="347.8" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="278.4" cy="329.9" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="280.7" cy="320.7" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="283.1" cy="326.3" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="285.4" cy="328.3" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="287.8" cy="356.4" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="290.1" cy="354.4" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="292.5" cy="354.4" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="294.8" cy="317.1" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="297.2" cy="314.5" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="299.5" cy="318.1" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="301.9" cy="309.4" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="304.2" cy="313.5" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="306.6" cy="319.1" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="308.9" cy="316.6" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="311.3" cy="318.1" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="313.6" cy="346.7" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="316.0" cy="347.8" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="318.3" cy="346.2" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="320.7" cy="349.8" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="323.0" cy="347.8" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="325.3" cy="344.2" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="327.7" cy="323.2" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="330.0" cy="316.6" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="332.4" cy="318.1" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="334.7" cy="323.2" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="337.1" cy="358.0" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="339.4" cy="341.6" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="341.8" cy="349.8" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="344.1" cy="338.0" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="346.5" cy="315.0" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="348.8" cy="321.7" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="351.2" cy="319.1" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="353.5" cy="352.4" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="355.9" cy="344.7" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="358.2" cy="353.4" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="360.6" cy="344.7" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="362.9" cy="346.2" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="365.3" cy="347.8" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="367.6" cy="352.4" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="370.0" cy="358.0" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="372.3" cy="348.8" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="374.7" cy="348.3" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="377.0" cy="353.4" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<text x="264" y="278" fill="#16202B" font-size="12.5" font-weight="600" font-family="Zilla Slab">Feb 1</text>
+<text x="382" y="278" fill="#16202B" font-size="11" text-anchor="end" font-family="IBM Plex Sans">7.2 in</text>
+<rect x="396" y="290" width="118" height="92" fill="#fff" stroke="#C9D1CE" stroke-width="1"/>
+<line x1="396" y1="337.3" x2="514" y2="337.3" stroke="#C9D1CE" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="401.0" cy="339.6" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="408.2" cy="340.1" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="415.4" cy="350.3" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="422.6" cy="340.1" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="429.8" cy="324.8" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="437.0" cy="311.0" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="444.2" cy="311.0" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="451.4" cy="300.7" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="458.6" cy="305.8" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="465.8" cy="341.1" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="473.0" cy="337.5" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="480.2" cy="340.1" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="487.4" cy="340.6" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="494.6" cy="319.6" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="501.8" cy="319.1" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="509.0" cy="317.1" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<text x="396" y="278" fill="#16202B" font-size="12.5" font-weight="600" font-family="Zilla Slab">Feb 4</text>
+<text x="514" y="278" fill="#16202B" font-size="11" text-anchor="end" font-family="IBM Plex Sans">6.5 in</text>
+<rect x="528" y="290" width="118" height="92" fill="#fff" stroke="#C9D1CE" stroke-width="1"/>
+<line x1="528" y1="337.3" x2="646" y2="337.3" stroke="#C9D1CE" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="533.0" cy="355.9" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="537.5" cy="357.0" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="542.0" cy="352.4" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="546.5" cy="346.7" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="551.0" cy="325.8" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="555.5" cy="325.3" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="560.0" cy="319.6" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="564.5" cy="328.3" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="569.0" cy="315.6" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="573.5" cy="297.2" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="578.0" cy="314.5" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="582.5" cy="357.0" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="587.0" cy="352.4" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="591.5" cy="350.8" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="596.0" cy="350.8" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="600.5" cy="313.0" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="605.0" cy="315.6" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="609.5" cy="313.5" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="614.0" cy="322.2" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="618.5" cy="317.6" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="623.0" cy="312.0" r="2.4" fill="#8C3A5B" opacity="0.85"/>
+<circle cx="627.5" cy="348.3" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="632.0" cy="352.4" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="636.5" cy="352.9" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<circle cx="641.0" cy="361.0" r="2.4" fill="#1F6F6B" opacity="0.85"/>
+<text x="528" y="278" fill="#16202B" font-size="12.5" font-weight="600" font-family="Zilla Slab">Feb 6</text>
+<text x="646" y="278" fill="#16202B" font-size="11" text-anchor="end" font-family="IBM Plex Sans">8.5 in</text>
+</svg>
+<figcaption>Release side by pitch order, one panel per bullpen. Colour marks which side of the session midpoint each pitch falls on; the dashed line is that midpoint. Runs of one colour are sets thrown from a single position.</figcaption>
+</figure>
+
+<h2>They match the game exactly</h2>
+<p>Through spring, the Classic and opening day he released 6.9 inches further to the arm side against left-handed hitters. Set that beside the bullpen marks.</p>
+<div class="stat">
+  <div class="pa"><b>−2.481</b><span>Bullpen position A</span></div>
+  <div class="pa"><b>−2.523</b><span>Game, vs RHH</span></div>
+  <div class="pb"><b>−3.068</b><span>Bullpen position B</span></div>
+  <div class="pb"><b>−3.109</b><span>Game, vs LHH</span></div>
+</div>
+<p class="finding">Both positions land within half an inch of the marks he rehearsed. Position A is the right-handed hitter setup, position B the left-handed one.</p>
+
+<h2>Then it came apart</h2>
+<figure class="bleed">
+<svg viewBox="0 0 760 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Handedness split by period">
+<line x1="58" y1="268.0" x2="740" y2="268.0" stroke="#C9D1CE" stroke-width="0.8"/>
+<text x="48" y="272.0" fill="#6B7A78" font-size="11.5" text-anchor="end" font-family="IBM Plex Sans">-6</text>
+<line x1="58" y1="220.4" x2="740" y2="220.4" stroke="#C9D1CE" stroke-width="0.8"/>
+<text x="48" y="224.4" fill="#6B7A78" font-size="11.5" text-anchor="end" font-family="IBM Plex Sans">-3</text>
+<line x1="58" y1="172.8" x2="740" y2="172.8" stroke="#C9D1CE" stroke-width="1.6"/>
+<text x="48" y="176.8" fill="#6B7A78" font-size="11.5" text-anchor="end" font-family="IBM Plex Sans">0</text>
+<line x1="58" y1="125.2" x2="740" y2="125.2" stroke="#C9D1CE" stroke-width="0.8"/>
+<text x="48" y="129.2" fill="#6B7A78" font-size="11.5" text-anchor="end" font-family="IBM Plex Sans">3</text>
+<line x1="58" y1="77.6" x2="740" y2="77.6" stroke="#C9D1CE" stroke-width="0.8"/>
+<text x="48" y="81.6" fill="#6B7A78" font-size="11.5" text-anchor="end" font-family="IBM Plex Sans">6</text>
+<line x1="58" y1="30.0" x2="740" y2="30.0" stroke="#C9D1CE" stroke-width="0.8"/>
+<text x="48" y="34.0" fill="#6B7A78" font-size="11.5" text-anchor="end" font-family="IBM Plex Sans">9</text>
+<circle cx="106.7" cy="61.7" r="6.5" fill="#1F6F6B"/>
+<text x="106.7" y="46.7" fill="#1F6F6B" font-size="13.5" font-weight="600" text-anchor="middle" font-family="Zilla Slab">+7.0</text>
+<text x="106.7" y="290.0" fill="#6B7A78" font-size="12" text-anchor="middle" font-family="IBM Plex Sans">Offseason</text>
+<text x="106.7" y="305.0" fill="#6B7A78" font-size="12" text-anchor="middle" font-family="IBM Plex Sans">bullpens</text>
+<line x1="106.7" y1="61.7" x2="204.1" y2="284.3" stroke="#16202B" stroke-width="1.6" opacity="0.35"/>
+<circle cx="204.1" cy="284.3" r="6.5" fill="#8C3A5B"/>
+<text x="204.1" y="269.3" fill="#8C3A5B" font-size="13.5" font-weight="600" text-anchor="middle" font-family="Zilla Slab">-7.0</text>
+<text x="204.1" y="290.0" fill="#6B7A78" font-size="12" text-anchor="middle" font-family="IBM Plex Sans">Spring</text>
+<text x="204.1" y="305.0" fill="#6B7A78" font-size="12" text-anchor="middle" font-family="IBM Plex Sans">+ WBC</text>
+<line x1="204.1" y1="284.3" x2="301.6" y2="103.1" stroke="#16202B" stroke-width="1.6" opacity="0.35"/>
+<circle cx="301.6" cy="103.1" r="6.5" fill="#1F6F6B"/>
+<text x="301.6" y="88.1" fill="#1F6F6B" font-size="13.5" font-weight="600" text-anchor="middle" font-family="Zilla Slab">+4.4</text>
+<text x="301.6" y="290.0" fill="#6B7A78" font-size="12" text-anchor="middle" font-family="IBM Plex Sans">April</text>
+<line x1="301.6" y1="103.1" x2="399.0" y2="119.7" stroke="#16202B" stroke-width="1.6" opacity="0.35"/>
+<circle cx="399.0" cy="119.7" r="6.5" fill="#1F6F6B"/>
+<text x="399.0" y="104.7" fill="#1F6F6B" font-size="13.5" font-weight="600" text-anchor="middle" font-family="Zilla Slab">+3.3</text>
+<text x="399.0" y="290.0" fill="#6B7A78" font-size="12" text-anchor="middle" font-family="IBM Plex Sans">May</text>
+<line x1="399.0" y1="119.7" x2="496.4" y2="132.6" stroke="#16202B" stroke-width="1.6" opacity="0.35"/>
+<circle cx="496.4" cy="132.6" r="6.5" fill="#1F6F6B"/>
+<text x="496.4" y="117.6" fill="#1F6F6B" font-size="13.5" font-weight="600" text-anchor="middle" font-family="Zilla Slab">+2.5</text>
+<text x="496.4" y="290.0" fill="#6B7A78" font-size="12" text-anchor="middle" font-family="IBM Plex Sans">June</text>
+<line x1="496.4" y1="132.6" x2="593.9" y2="168.2" stroke="#16202B" stroke-width="1.6" opacity="0.35"/>
+<circle cx="593.9" cy="168.2" r="6.5" fill="#6B7A78"/>
+<text x="593.9" y="153.2" fill="#6B7A78" font-size="13.5" font-weight="600" text-anchor="middle" font-family="Zilla Slab">+0.3</text>
+<text x="593.9" y="290.0" fill="#6B7A78" font-size="12" text-anchor="middle" font-family="IBM Plex Sans">July</text>
+<line x1="593.9" y1="168.2" x2="691.3" y2="161.8" stroke="#16202B" stroke-width="1.6" opacity="0.35"/>
+<circle cx="691.3" cy="161.8" r="6.5" fill="#6B7A78"/>
+<text x="691.3" y="146.8" fill="#6B7A78" font-size="13.5" font-weight="600" text-anchor="middle" font-family="Zilla Slab">+0.7</text>
+<text x="691.3" y="290.0" fill="#6B7A78" font-size="12" text-anchor="middle" font-family="IBM Plex Sans">August</text>
+<text x="48" y="18" fill="#6B7A78" font-size="11.5" text-anchor="end" font-family="IBM Plex Sans">in</text>
+</svg>
+<figcaption>Difference in fastball release side against left- versus right-handed hitters. Positive means further to the arm side against lefties, which is the rehearsed direction.</figcaption>
+</figure>
+<p>April inverts the sign. May and June shrink it. By July the split is three tenths of an inch, which is nothing — he is throwing from one spot to everybody.</p>
+<p>This is the question worth your movement data. A system drilled across three months and executed cleanly in March does not usually vanish in eight weeks by accident. April is the window: the inversion happens between opening day and the second start.</p>
+</section>
+
+<!-- ============ VELOCITY ============ -->
+<section role="tabpanel" id="p-vel" aria-labelledby="t-vel" hidden>
+<p class="lede">This is the healthy part of the year. Velocity and extension rise together through the offseason, arrive at game levels by spring, and hold from there.</p>
+<figure class="bleed">
+<svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Velocity and extension build from December to opening day">
+<line x1="52" y1="229.1" x2="708" y2="229.1" stroke="#C9D1CE" stroke-width="0.8"/>
+<text x="43" y="233.1" fill="#1F6F6B" font-size="11.5" text-anchor="end" font-family="IBM Plex Sans">87</text>
+<line x1="52" y1="178.3" x2="708" y2="178.3" stroke="#C9D1CE" stroke-width="0.8"/>
+<text x="43" y="182.3" fill="#1F6F6B" font-size="11.5" text-anchor="end" font-family="IBM Plex Sans">90</text>
+<line x1="52" y1="127.5" x2="708" y2="127.5" stroke="#C9D1CE" stroke-width="0.8"/>
+<text x="43" y="131.5" fill="#1F6F6B" font-size="11.5" text-anchor="end" font-family="IBM Plex Sans">93</text>
+<line x1="52" y1="76.8" x2="708" y2="76.8" stroke="#C9D1CE" stroke-width="0.8"/>
+<text x="43" y="80.8" fill="#1F6F6B" font-size="11.5" text-anchor="end" font-family="IBM Plex Sans">96</text>
+<line x1="52" y1="26.0" x2="708" y2="26.0" stroke="#C9D1CE" stroke-width="0.8"/>
+<text x="43" y="30.0" fill="#1F6F6B" font-size="11.5" text-anchor="end" font-family="IBM Plex Sans">99</text>
+<text x="717" y="241.9" fill="#8C3A5B" font-size="11.5" font-family="IBM Plex Sans">4.5</text>
+<text x="717" y="201.1" fill="#8C3A5B" font-size="11.5" font-family="IBM Plex Sans">5.0</text>
+<text x="717" y="160.4" fill="#8C3A5B" font-size="11.5" font-family="IBM Plex Sans">5.5</text>
+<text x="717" y="119.6" fill="#8C3A5B" font-size="11.5" font-family="IBM Plex Sans">6.0</text>
+<text x="717" y="78.9" fill="#8C3A5B" font-size="11.5" font-family="IBM Plex Sans">6.5</text>
+<text x="717" y="38.1" fill="#8C3A5B" font-size="11.5" font-family="IBM Plex Sans">7.0</text>
+<line x1="462.0" y1="26" x2="462.0" y2="246" stroke="#16202B" stroke-width="1" stroke-dasharray="4 4" opacity="0.5"/>
+<text x="455.0" y="38" fill="#6B7A78" font-size="11.5" text-anchor="end" font-family="IBM Plex Sans">bullpens</text>
+<text x="469.0" y="38" fill="#6B7A78" font-size="11.5" font-family="IBM Plex Sans">games</text>
+<path d="M52.0,198.9 L77.2,206.1 L96.2,173.8 L171.8,192.6 L184.5,218.6 L209.7,171.7 L247.5,186.9 L266.5,141.2 L285.4,148.7 L304.3,133.6 L335.8,119.1 L335.8,200.7 L354.8,158.4 L373.7,118.2 L392.6,163.1 L405.2,157.9 L525.1,49.3 L562.9,40.9 L600.8,44.9 L638.6,50.2 L676.5,84.2 L708.0,44.1" fill="none" stroke="#1F6F6B" stroke-width="2" opacity="0.55"/>
+<circle cx="52.0" cy="198.9" r="4" fill="#fff" stroke="#1F6F6B" stroke-width="1.8"/>
+<circle cx="77.2" cy="206.1" r="4" fill="#fff" stroke="#1F6F6B" stroke-width="1.8"/>
+<circle cx="96.2" cy="173.8" r="4" fill="#fff" stroke="#1F6F6B" stroke-width="1.8"/>
+<circle cx="171.8" cy="192.6" r="4" fill="#fff" stroke="#1F6F6B" stroke-width="1.8"/>
+<circle cx="184.5" cy="218.6" r="4" fill="#fff" stroke="#1F6F6B" stroke-width="1.8"/>
+<circle cx="209.7" cy="171.7" r="4" fill="#fff" stroke="#1F6F6B" stroke-width="1.8"/>
+<circle cx="247.5" cy="186.9" r="4" fill="#fff" stroke="#1F6F6B" stroke-width="1.8"/>
+<circle cx="266.5" cy="141.2" r="4" fill="#fff" stroke="#1F6F6B" stroke-width="1.8"/>
+<circle cx="285.4" cy="148.7" r="4" fill="#fff" stroke="#1F6F6B" stroke-width="1.8"/>
+<circle cx="304.3" cy="133.6" r="4" fill="#fff" stroke="#1F6F6B" stroke-width="1.8"/>
+<circle cx="335.8" cy="119.1" r="4" fill="#fff" stroke="#1F6F6B" stroke-width="1.8"/>
+<circle cx="335.8" cy="200.7" r="4" fill="#fff" stroke="#1F6F6B" stroke-width="1.8"/>
+<circle cx="354.8" cy="158.4" r="4" fill="#fff" stroke="#1F6F6B" stroke-width="1.8"/>
+<circle cx="373.7" cy="118.2" r="4" fill="#fff" stroke="#1F6F6B" stroke-width="1.8"/>
+<circle cx="392.6" cy="163.1" r="4" fill="#fff" stroke="#1F6F6B" stroke-width="1.8"/>
+<circle cx="405.2" cy="157.9" r="4" fill="#fff" stroke="#1F6F6B" stroke-width="1.8"/>
+<circle cx="525.1" cy="49.3" r="4" fill="#1F6F6B" stroke="#1F6F6B" stroke-width="1.8"/>
+<circle cx="562.9" cy="40.9" r="4" fill="#1F6F6B" stroke="#1F6F6B" stroke-width="1.8"/>
+<circle cx="600.8" cy="44.9" r="4" fill="#1F6F6B" stroke="#1F6F6B" stroke-width="1.8"/>
+<circle cx="638.6" cy="50.2" r="4" fill="#1F6F6B" stroke="#1F6F6B" stroke-width="1.8"/>
+<circle cx="676.5" cy="84.2" r="4" fill="#1F6F6B" stroke="#1F6F6B" stroke-width="1.8"/>
+<circle cx="708.0" cy="44.1" r="4" fill="#1F6F6B" stroke="#1F6F6B" stroke-width="1.8"/>
+<path d="M52.0,121.4 L77.2,168.2 L96.2,137.4 L171.8,220.8 L184.5,206.9 L209.7,211.8 L247.5,175.6 L266.5,102.2 L285.4,109.9 L304.3,119.5 L335.8,85.4 L335.8,138.0 L354.8,108.5 L373.7,115.6 L392.6,112.9 L405.2,86.1 L525.1,50.6 L562.9,63.5 L600.8,48.6 L638.6,69.1 L676.5,66.0 L708.0,42.3" fill="none" stroke="#8C3A5B" stroke-width="2" opacity="0.55"/>
+<circle cx="52.0" cy="121.4" r="4" fill="#fff" stroke="#8C3A5B" stroke-width="1.8"/>
+<circle cx="77.2" cy="168.2" r="4" fill="#fff" stroke="#8C3A5B" stroke-width="1.8"/>
+<circle cx="96.2" cy="137.4" r="4" fill="#fff" stroke="#8C3A5B" stroke-width="1.8"/>
+<circle cx="171.8" cy="220.8" r="4" fill="#fff" stroke="#8C3A5B" stroke-width="1.8"/>
+<circle cx="184.5" cy="206.9" r="4" fill="#fff" stroke="#8C3A5B" stroke-width="1.8"/>
+<circle cx="209.7" cy="211.8" r="4" fill="#fff" stroke="#8C3A5B" stroke-width="1.8"/>
+<circle cx="247.5" cy="175.6" r="4" fill="#fff" stroke="#8C3A5B" stroke-width="1.8"/>
+<circle cx="266.5" cy="102.2" r="4" fill="#fff" stroke="#8C3A5B" stroke-width="1.8"/>
+<circle cx="285.4" cy="109.9" r="4" fill="#fff" stroke="#8C3A5B" stroke-width="1.8"/>
+<circle cx="304.3" cy="119.5" r="4" fill="#fff" stroke="#8C3A5B" stroke-width="1.8"/>
+<circle cx="335.8" cy="85.4" r="4" fill="#fff" stroke="#8C3A5B" stroke-width="1.8"/>
+<circle cx="335.8" cy="138.0" r="4" fill="#fff" stroke="#8C3A5B" stroke-width="1.8"/>
+<circle cx="354.8" cy="108.5" r="4" fill="#fff" stroke="#8C3A5B" stroke-width="1.8"/>
+<circle cx="373.7" cy="115.6" r="4" fill="#fff" stroke="#8C3A5B" stroke-width="1.8"/>
+<circle cx="392.6" cy="112.9" r="4" fill="#fff" stroke="#8C3A5B" stroke-width="1.8"/>
+<circle cx="405.2" cy="86.1" r="4" fill="#fff" stroke="#8C3A5B" stroke-width="1.8"/>
+<circle cx="525.1" cy="50.6" r="4" fill="#8C3A5B" stroke="#8C3A5B" stroke-width="1.8"/>
+<circle cx="562.9" cy="63.5" r="4" fill="#8C3A5B" stroke="#8C3A5B" stroke-width="1.8"/>
+<circle cx="600.8" cy="48.6" r="4" fill="#8C3A5B" stroke="#8C3A5B" stroke-width="1.8"/>
+<circle cx="638.6" cy="69.1" r="4" fill="#8C3A5B" stroke="#8C3A5B" stroke-width="1.8"/>
+<circle cx="676.5" cy="66.0" r="4" fill="#8C3A5B" stroke="#8C3A5B" stroke-width="1.8"/>
+<circle cx="708.0" cy="42.3" r="4" fill="#8C3A5B" stroke="#8C3A5B" stroke-width="1.8"/>
+<text x="52.0" y="266.0" fill="#6B7A78" font-size="11.5" text-anchor="middle" font-family="IBM Plex Sans">Dec 12</text>
+<text x="209.7" y="266.0" fill="#6B7A78" font-size="11.5" text-anchor="middle" font-family="IBM Plex Sans">Jan 6</text>
+<text x="405.2" y="266.0" fill="#6B7A78" font-size="11.5" text-anchor="middle" font-family="IBM Plex Sans">Feb 6</text>
+<text x="708.0" y="266.0" fill="#6B7A78" font-size="11.5" text-anchor="middle" font-family="IBM Plex Sans">Mar 26</text>
+<text x="52" y="288" fill="#1F6F6B" font-size="12" font-family="IBM Plex Sans">fastball velocity, mph</text>
+<text x="708" y="288" fill="#8C3A5B" font-size="12" text-anchor="end" font-family="IBM Plex Sans">extension, ft</text>
+</svg>
+<figcaption>Fastball-band velocity and extension by session. Hollow markers are bullpens, filled markers are games.</figcaption>
+</figure>
+<p>The dip through late December and early January is the holiday lull — extension bottoms at 4.65 ft on December 31 and velocity with it. From January 15 the build is continuous.</p>
+<p class="finding">The gap from the last bullpen to the first spring outing is 6.4 mph and 0.44 ft of extension.</p>
+<p>That is the bullpen-to-game effort offset, measured rather than assumed. It is the number to apply whenever a bullpen state is compared to a game state, and it is why raw bullpen extension should never be read against a game figure directly.</p>
+<h3>What holds all season</h3>
+<p>In-season fastball extension sits between 6.73 and 6.90 ft every month from March to August, and velocity between 96.5 and 97.9 mph. Neither channel drifts. Whatever changed this year, the drive down the mound did not.</p>
+</section>
+
+<!-- ============ SPIN ============ -->
+<section role="tabpanel" id="p-spin" aria-labelledby="t-spin" hidden>
+<p class="lede">Fastball spin fell from 2,405 rpm in March to roughly 2,120 by July. Induced vertical break followed it down. This is the one channel in the year that looks like a genuine loss, and the release point does not explain it.</p>
+<figure class="bleed">
+<svg viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fastball spin and induced vertical break across 2026">
+<line x1="56" y1="239.3" x2="708" y2="239.3" stroke="#C9D1CE" stroke-width="0.8"/>
+<text x="47" y="243.3" fill="#1F6F6B" font-size="11.5" text-anchor="end" font-family="IBM Plex Sans">2100</text>
+<line x1="56" y1="186.0" x2="708" y2="186.0" stroke="#C9D1CE" stroke-width="0.8"/>
+<text x="47" y="190.0" fill="#1F6F6B" font-size="11.5" text-anchor="end" font-family="IBM Plex Sans">2200</text>
+<line x1="56" y1="132.7" x2="708" y2="132.7" stroke="#C9D1CE" stroke-width="0.8"/>
+<text x="47" y="136.7" fill="#1F6F6B" font-size="11.5" text-anchor="end" font-family="IBM Plex Sans">2300</text>
+<line x1="56" y1="79.3" x2="708" y2="79.3" stroke="#C9D1CE" stroke-width="0.8"/>
+<text x="47" y="83.3" fill="#1F6F6B" font-size="11.5" text-anchor="end" font-family="IBM Plex Sans">2400</text>
+<line x1="56" y1="26.0" x2="708" y2="26.0" stroke="#C9D1CE" stroke-width="0.8"/>
+<text x="47" y="30.0" fill="#1F6F6B" font-size="11.5" text-anchor="end" font-family="IBM Plex Sans">2500</text>
+<text x="717" y="270.0" fill="#8C3A5B" font-size="11.5" font-family="IBM Plex Sans">11</text>
+<text x="717" y="210.0" fill="#8C3A5B" font-size="11.5" font-family="IBM Plex Sans">12</text>
+<text x="717" y="150.0" fill="#8C3A5B" font-size="11.5" font-family="IBM Plex Sans">13</text>
+<text x="717" y="90.0" fill="#8C3A5B" font-size="11.5" font-family="IBM Plex Sans">14</text>
+<text x="717" y="30.0" fill="#8C3A5B" font-size="11.5" font-family="IBM Plex Sans">15</text>
+<line x1="150.6" y1="26" x2="150.6" y2="266" stroke="#16202B" stroke-width="1" stroke-dasharray="4 4" opacity="0.5"/>
+<text x="143.6" y="38" fill="#6B7A78" font-size="11.5" text-anchor="end" font-family="IBM Plex Sans">spring + WBC</text>
+<text x="157.6" y="38" fill="#6B7A78" font-size="11.5" font-family="IBM Plex Sans">regular season</text>
+<path d="M56.0,86.7 L77.0,154.4 L98.1,151.7 L119.1,143.5 L140.1,182.0 L161.2,76.8 L182.2,123.2 L203.2,132.8 L224.3,146.8 L245.3,149.3 L266.3,209.1 L287.4,182.3 L308.4,196.8 L329.4,181.3 L350.5,189.5 L371.5,192.3 L392.5,183.2 L413.5,149.4 L434.6,200.6 L455.6,218.3 L476.6,226.2 L497.7,247.1 L518.7,299.1 L539.7,212.5 L560.8,248.6 L581.8,208.5 L602.8,191.1 L623.9,235.8 L644.9,212.4 L665.9,245.5 L687.0,213.1 L708.0,244.3" fill="none" stroke="#1F6F6B" stroke-width="2" opacity="0.6"/>
+<circle cx="56.0" cy="86.7" r="3.4" fill="#1F6F6B"/>
+<circle cx="77.0" cy="154.4" r="3.4" fill="#1F6F6B"/>
+<circle cx="98.1" cy="151.7" r="3.4" fill="#1F6F6B"/>
+<circle cx="119.1" cy="143.5" r="3.4" fill="#1F6F6B"/>
+<circle cx="140.1" cy="182.0" r="3.4" fill="#1F6F6B"/>
+<circle cx="161.2" cy="76.8" r="3.4" fill="#1F6F6B"/>
+<circle cx="182.2" cy="123.2" r="3.4" fill="#1F6F6B"/>
+<circle cx="203.2" cy="132.8" r="3.4" fill="#1F6F6B"/>
+<circle cx="224.3" cy="146.8" r="3.4" fill="#1F6F6B"/>
+<circle cx="245.3" cy="149.3" r="3.4" fill="#1F6F6B"/>
+<circle cx="266.3" cy="209.1" r="3.4" fill="#1F6F6B"/>
+<circle cx="287.4" cy="182.3" r="3.4" fill="#1F6F6B"/>
+<circle cx="308.4" cy="196.8" r="3.4" fill="#1F6F6B"/>
+<circle cx="329.4" cy="181.3" r="3.4" fill="#1F6F6B"/>
+<circle cx="350.5" cy="189.5" r="3.4" fill="#1F6F6B"/>
+<circle cx="371.5" cy="192.3" r="3.4" fill="#1F6F6B"/>
+<circle cx="392.5" cy="183.2" r="3.4" fill="#1F6F6B"/>
+<circle cx="413.5" cy="149.4" r="3.4" fill="#1F6F6B"/>
+<circle cx="434.6" cy="200.6" r="3.4" fill="#1F6F6B"/>
+<circle cx="455.6" cy="218.3" r="3.4" fill="#1F6F6B"/>
+<circle cx="476.6" cy="226.2" r="3.4" fill="#1F6F6B"/>
+<circle cx="497.7" cy="247.1" r="3.4" fill="#1F6F6B"/>
+<circle cx="518.7" cy="299.1" r="3.4" fill="#1F6F6B"/>
+<circle cx="539.7" cy="212.5" r="3.4" fill="#1F6F6B"/>
+<circle cx="560.8" cy="248.6" r="3.4" fill="#1F6F6B"/>
+<circle cx="581.8" cy="208.5" r="3.4" fill="#1F6F6B"/>
+<circle cx="602.8" cy="191.1" r="3.4" fill="#1F6F6B"/>
+<circle cx="623.9" cy="235.8" r="3.4" fill="#1F6F6B"/>
+<circle cx="644.9" cy="212.4" r="3.4" fill="#1F6F6B"/>
+<circle cx="665.9" cy="245.5" r="3.4" fill="#1F6F6B"/>
+<circle cx="687.0" cy="213.1" r="3.4" fill="#1F6F6B"/>
+<circle cx="708.0" cy="244.3" r="3.4" fill="#1F6F6B"/>
+<path d="M56.0,33.6 L77.0,108.7 L98.1,99.2 L119.1,93.7 L140.1,78.5 L161.2,108.6 L182.2,134.2 L203.2,74.9 L224.3,193.1 L245.3,174.0 L266.3,164.0 L287.4,76.2 L308.4,149.2 L329.4,141.5 L350.5,203.5 L371.5,50.4 L392.5,89.2 L413.5,48.0 L434.6,144.9 L455.6,166.3 L476.6,269.3 L497.7,150.9 L518.7,135.9 L539.7,182.4 L560.8,177.5 L581.8,172.3 L602.8,147.6 L623.9,164.4 L644.9,172.5 L665.9,115.8 L687.0,162.1 L708.0,129.9" fill="none" stroke="#8C3A5B" stroke-width="2" opacity="0.6"/>
+<circle cx="56.0" cy="33.6" r="3.4" fill="#8C3A5B"/>
+<circle cx="77.0" cy="108.7" r="3.4" fill="#8C3A5B"/>
+<circle cx="98.1" cy="99.2" r="3.4" fill="#8C3A5B"/>
+<circle cx="119.1" cy="93.7" r="3.4" fill="#8C3A5B"/>
+<circle cx="140.1" cy="78.5" r="3.4" fill="#8C3A5B"/>
+<circle cx="161.2" cy="108.6" r="3.4" fill="#8C3A5B"/>
+<circle cx="182.2" cy="134.2" r="3.4" fill="#8C3A5B"/>
+<circle cx="203.2" cy="74.9" r="3.4" fill="#8C3A5B"/>
+<circle cx="224.3" cy="193.1" r="3.4" fill="#8C3A5B"/>
+<circle cx="245.3" cy="174.0" r="3.4" fill="#8C3A5B"/>
+<circle cx="266.3" cy="164.0" r="3.4" fill="#8C3A5B"/>
+<circle cx="287.4" cy="76.2" r="3.4" fill="#8C3A5B"/>
+<circle cx="308.4" cy="149.2" r="3.4" fill="#8C3A5B"/>
+<circle cx="329.4" cy="141.5" r="3.4" fill="#8C3A5B"/>
+<circle cx="350.5" cy="203.5" r="3.4" fill="#8C3A5B"/>
+<circle cx="371.5" cy="50.4" r="3.4" fill="#8C3A5B"/>
+<circle cx="392.5" cy="89.2" r="3.4" fill="#8C3A5B"/>
+<circle cx="413.5" cy="48.0" r="3.4" fill="#8C3A5B"/>
+<circle cx="434.6" cy="144.9" r="3.4" fill="#8C3A5B"/>
+<circle cx="455.6" cy="166.3" r="3.4" fill="#8C3A5B"/>
+<circle cx="476.6" cy="269.3" r="3.4" fill="#8C3A5B"/>
+<circle cx="497.7" cy="150.9" r="3.4" fill="#8C3A5B"/>
+<circle cx="518.7" cy="135.9" r="3.4" fill="#8C3A5B"/>
+<circle cx="539.7" cy="182.4" r="3.4" fill="#8C3A5B"/>
+<circle cx="560.8" cy="177.5" r="3.4" fill="#8C3A5B"/>
+<circle cx="581.8" cy="172.3" r="3.4" fill="#8C3A5B"/>
+<circle cx="602.8" cy="147.6" r="3.4" fill="#8C3A5B"/>
+<circle cx="623.9" cy="164.4" r="3.4" fill="#8C3A5B"/>
+<circle cx="644.9" cy="172.5" r="3.4" fill="#8C3A5B"/>
+<circle cx="665.9" cy="115.8" r="3.4" fill="#8C3A5B"/>
+<circle cx="687.0" cy="162.1" r="3.4" fill="#8C3A5B"/>
+<circle cx="708.0" cy="129.9" r="3.4" fill="#8C3A5B"/>
+<text x="56.0" y="286.0" fill="#6B7A78" font-size="11.5" text-anchor="middle" font-family="IBM Plex Sans">Feb 25</text>
+<text x="161.2" y="286.0" fill="#6B7A78" font-size="11.5" text-anchor="middle" font-family="IBM Plex Sans">Mar 26</text>
+<text x="476.6" y="286.0" fill="#6B7A78" font-size="11.5" text-anchor="middle" font-family="IBM Plex Sans">Jun 20</text>
+<text x="708.0" y="286.0" fill="#6B7A78" font-size="11.5" text-anchor="middle" font-family="IBM Plex Sans">Aug 25</text>
+<text x="56" y="308" fill="#1F6F6B" font-size="12" font-family="IBM Plex Sans">fastball spin, rpm</text>
+<text x="708" y="308" fill="#8C3A5B" font-size="12" text-anchor="end" font-family="IBM Plex Sans">induced vertical break, in</text>
+</svg>
+<figcaption>Fastball spin and induced vertical break for every outing, spring and Classic through the regular season.</figcaption>
+</figure>
+
+<h2>Testing the release hypothesis</h2>
+<p>The original question was whether release position drives the loss. Both drift over the same months and the raw correlation between distance-from-mark and spin is −0.30, which looks promising until calendar time enters the model.</p>
+<p>With time controlled, distance from the nearest rehearsed mark returns t = +0.41 against spin, t = −0.43 against velocity and t = −1.28 against induced vertical break. The same test across sinker, sweeper, splinker and changeup returns nothing significant. Substituting release consistency for release position gets closest, at t = −1.84 for fastball release scatter against spin, which is suggestive and no more.</p>
+<figure class="bleed">
+<svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fastball spin and off-mark distance by start">
+<line x1="58" y1="218.5" x2="740" y2="218.5" stroke="#C9D1CE" stroke-width="0.8"/>
+<text x="49" y="222.5" fill="#6B7A78" font-size="11.5" text-anchor="end" font-family="IBM Plex Sans">2100</text>
+<line x1="58" y1="163.5" x2="740" y2="163.5" stroke="#C9D1CE" stroke-width="0.8"/>
+<text x="49" y="167.5" fill="#6B7A78" font-size="11.5" text-anchor="end" font-family="IBM Plex Sans">2200</text>
+<line x1="58" y1="108.5" x2="740" y2="108.5" stroke="#C9D1CE" stroke-width="0.8"/>
+<text x="49" y="112.5" fill="#6B7A78" font-size="11.5" text-anchor="end" font-family="IBM Plex Sans">2300</text>
+<line x1="58" y1="53.5" x2="740" y2="53.5" stroke="#C9D1CE" stroke-width="0.8"/>
+<text x="49" y="57.5" fill="#6B7A78" font-size="11.5" text-anchor="end" font-family="IBM Plex Sans">2400</text>
+<path d="M58.0,50.9 L84.2,98.7 L110.5,108.6 L136.7,123.1 L162.9,125.7 L189.2,187.4 L215.4,159.7 L241.6,174.6 L267.8,158.7 L294.1,167.1 L320.3,170.0 L346.5,160.6 L372.8,125.8 L399.0,178.6 L425.2,196.8 L451.5,204.9 L477.7,226.5 L503.9,280.2 L530.2,190.8 L556.4,228.1 L582.6,186.7 L608.8,168.8 L635.1,214.8 L661.3,190.7 L687.5,224.8 L713.8,191.5 L740.0,223.6" fill="none" stroke="#16202B" stroke-width="2" opacity="0.75"/>
+<circle cx="58.0" cy="50.9" r="5.0" fill="#8C3A5B" opacity="0.22"/>
+<circle cx="58.0" cy="50.9" r="2.6" fill="#16202B"/>
+<circle cx="84.2" cy="98.7" r="5.1" fill="#8C3A5B" opacity="0.22"/>
+<circle cx="84.2" cy="98.7" r="2.6" fill="#16202B"/>
+<circle cx="110.5" cy="108.6" r="6.1" fill="#8C3A5B" opacity="0.22"/>
+<circle cx="110.5" cy="108.6" r="2.6" fill="#16202B"/>
+<circle cx="136.7" cy="123.1" r="4.7" fill="#8C3A5B" opacity="0.22"/>
+<circle cx="136.7" cy="123.1" r="2.6" fill="#16202B"/>
+<circle cx="162.9" cy="125.7" r="3.6" fill="#8C3A5B" opacity="0.22"/>
+<circle cx="162.9" cy="125.7" r="2.6" fill="#16202B"/>
+<circle cx="189.2" cy="187.4" r="3.2" fill="#8C3A5B" opacity="0.22"/>
+<circle cx="189.2" cy="187.4" r="2.6" fill="#16202B"/>
+<circle cx="215.4" cy="159.7" r="4.9" fill="#8C3A5B" opacity="0.22"/>
+<circle cx="215.4" cy="159.7" r="2.6" fill="#16202B"/>
+<circle cx="241.6" cy="174.6" r="4.0" fill="#8C3A5B" opacity="0.22"/>
+<circle cx="241.6" cy="174.6" r="2.6" fill="#16202B"/>
+<circle cx="267.8" cy="158.7" r="6.0" fill="#8C3A5B" opacity="0.22"/>
+<circle cx="267.8" cy="158.7" r="2.6" fill="#16202B"/>
+<circle cx="294.1" cy="167.1" r="3.3" fill="#8C3A5B" opacity="0.22"/>
+<circle cx="294.1" cy="167.1" r="2.6" fill="#16202B"/>
+<circle cx="320.3" cy="170.0" r="4.8" fill="#8C3A5B" opacity="0.22"/>
+<circle cx="320.3" cy="170.0" r="2.6" fill="#16202B"/>
+<circle cx="346.5" cy="160.6" r="5.6" fill="#8C3A5B" opacity="0.22"/>
+<circle cx="346.5" cy="160.6" r="2.6" fill="#16202B"/>
+<circle cx="372.8" cy="125.8" r="3.9" fill="#8C3A5B" opacity="0.22"/>
+<circle cx="372.8" cy="125.8" r="2.6" fill="#16202B"/>
+<circle cx="399.0" cy="178.6" r="6.1" fill="#8C3A5B" opacity="0.22"/>
+<circle cx="399.0" cy="178.6" r="2.6" fill="#16202B"/>
+<circle cx="425.2" cy="196.8" r="6.7" fill="#8C3A5B" opacity="0.22"/>
+<circle cx="425.2" cy="196.8" r="2.6" fill="#16202B"/>
+<circle cx="451.5" cy="204.9" r="7.2" fill="#8C3A5B" opacity="0.22"/>
+<circle cx="451.5" cy="204.9" r="2.6" fill="#16202B"/>
+<circle cx="477.7" cy="226.5" r="7.0" fill="#8C3A5B" opacity="0.22"/>
+<circle cx="477.7" cy="226.5" r="2.6" fill="#16202B"/>
+<circle cx="503.9" cy="280.2" r="5.9" fill="#8C3A5B" opacity="0.22"/>
+<circle cx="503.9" cy="280.2" r="2.6" fill="#16202B"/>
+<circle cx="530.2" cy="190.8" r="7.9" fill="#8C3A5B" opacity="0.22"/>
+<circle cx="530.2" cy="190.8" r="2.6" fill="#16202B"/>
+<circle cx="556.4" cy="228.1" r="7.1" fill="#8C3A5B" opacity="0.22"/>
+<circle cx="556.4" cy="228.1" r="2.6" fill="#16202B"/>
+<circle cx="582.6" cy="186.7" r="7.6" fill="#8C3A5B" opacity="0.22"/>
+<circle cx="582.6" cy="186.7" r="2.6" fill="#16202B"/>
+<circle cx="608.8" cy="168.8" r="7.3" fill="#8C3A5B" opacity="0.22"/>
+<circle cx="608.8" cy="168.8" r="2.6" fill="#16202B"/>
+<circle cx="635.1" cy="214.8" r="8.3" fill="#8C3A5B" opacity="0.22"/>
+<circle cx="635.1" cy="214.8" r="2.6" fill="#16202B"/>
+<circle cx="661.3" cy="190.7" r="8.2" fill="#8C3A5B" opacity="0.22"/>
+<circle cx="661.3" cy="190.7" r="2.6" fill="#16202B"/>
+<circle cx="687.5" cy="224.8" r="3.3" fill="#8C3A5B" opacity="0.22"/>
+<circle cx="687.5" cy="224.8" r="2.6" fill="#16202B"/>
+<circle cx="713.8" cy="191.5" r="6.2" fill="#8C3A5B" opacity="0.22"/>
+<circle cx="713.8" cy="191.5" r="2.6" fill="#16202B"/>
+<circle cx="740.0" cy="223.6" r="4.2" fill="#8C3A5B" opacity="0.22"/>
+<circle cx="740.0" cy="223.6" r="2.6" fill="#16202B"/>
+<text x="58.0" y="266.0" fill="#6B7A78" font-size="11.5" text-anchor="middle" font-family="IBM Plex Sans">Mar 26</text>
+<text x="399.0" y="266.0" fill="#6B7A78" font-size="11.5" text-anchor="middle" font-family="IBM Plex Sans">Jun 9</text>
+<text x="740.0" y="266.0" fill="#6B7A78" font-size="11.5" text-anchor="middle" font-family="IBM Plex Sans">Aug 25</text>
+<text x="58" y="288" fill="#6B7A78" font-size="12" font-family="IBM Plex Sans">line: fastball spin, rpm &nbsp;·&nbsp; halo size: distance from nearest rubber mark</text>
+</svg>
+<figcaption>Fastball spin by start, with halo size showing how far that start's release sat from the nearest rehearsed mark. The largest halos cluster in July; spin does not recover when they shrink in August.</figcaption>
+</figure>
+<p class="finding neg">In August he returns to within a third of an inch of his bullpen mark — the closest all season — and spin stays flat at July levels.</p>
+<p>That is the test that settles it. If position drove the loss, returning to position should recover it. It does not. Two things declining over the same summer, not one causing the other.</p>
+<p>This also corrects an earlier read. The late-August release movement previously flagged as a shift toward the glove side is neither glove-side nor a departure. It is a move back to the arm side, onto the offseason mark. July was the anomaly.</p>
+<h3>Still open</h3>
+<p>Fatigue, grip, ball or seam variation, and conditions are all untested here. None of them are ruled out; none of them are supported either. The one thing this analysis can say is that the answer is not release geometry.</p>
+</section>
+
+<!-- ============ COMPARE ============ -->
+<section role="tabpanel" id="p-cmp" aria-labelledby="t-cmp" hidden>
+<p class="lede">Pick any bullpen and any outing to see them side by side. Deltas run from the left selection to the right, so a positive velocity delta means the right-hand session was harder.</p>
+
+<div class="pickers">
+  <div class="pick">
+    <label for="selL">Left</label>
+    <select id="selL"></select>
+  </div>
+  <div class="pick">
+    <label for="selR">Right</label>
+    <select id="selR"></select>
+  </div>
+</div>
+
+<div class="shapebar" role="group" aria-label="Pitch group">
+  <button data-shape="all" aria-pressed="true">All pitches</button>
+  <button data-shape="FB" aria-pressed="false">Fastball / sinker</button>
+  <button data-shape="BREAKING" aria-pressed="false">Breaking</button>
+  <button data-shape="OFFSPEED" aria-pressed="false">Offspeed</button>
+</div>
+
+<table class="cmp">
+<thead><tr class="cmphead"><th>Metric</th><th class="n" id="hL"></th><th class="n" id="hR"></th><th class="n">Delta</th></tr></thead>
+<tbody id="cmpbody"></tbody>
+</table>
+<p id="cmpnote"></p>
+
+<h3>Reading the deltas</h3>
+<p>Bullpens run about 6 mph and 0.44 ft of extension below game effort, so a bullpen-versus-game comparison will always show those gaps. Release side is the channel that is effort-matched and comparable directly.</p>
+</section>
+
+<!-- ============ DATA ============ -->
+<section role="tabpanel" id="p-data" aria-labelledby="t-data" hidden>
+<h2>Offseason bullpens</h2>
+<table>
+<thead><tr><th>Bullpen</th><th class="n">Pitches</th><th class="n">Gap, in</th><th class="n">Position A / B</th><th class="n">Peak mph</th><th class="n">Extension</th></tr></thead>
+<tbody>
+<tr><td>Dec 12, 2025</td><td class="n">14</td><td class="n">6.1</td><td class="n">-2.35 / -2.85</td><td class="n">89.8</td><td class="n">5.88</td></tr>
+<tr><td>Dec 16, 2025</td><td class="n">18</td><td class="n">6.0</td><td class="n">-2.24 / -2.74</td><td class="n">89.6</td><td class="n">5.32</td></tr>
+<tr><td>Dec 19, 2025</td><td class="n">20</td><td class="n">8.1</td><td class="n">-2.27 / -2.94</td><td class="n">92.1</td><td class="n">5.44</td></tr>
+<tr><td>Dec 23, 2025</td><td class="n">26</td><td class="n">7.7</td><td class="n">-2.34 / -2.98</td><td class="n">91.7</td><td class="n">—</td></tr>
+<tr><td>Dec 31, 2025</td><td class="n">20</td><td class="n">6.7</td><td class="n">-2.38 / -2.94</td><td class="n">90.8</td><td class="n">4.65</td></tr>
+<tr class="off"><td>Jan 2, 2026</td><td class="n">7</td><td class="n">—</td><td class="n">below detection threshold</td><td class="n">88.7</td><td class="n">4.77</td></tr>
+<tr><td>Jan 6, 2026</td><td class="n">19</td><td class="n">6.0</td><td class="n">-2.39 / -2.89</td><td class="n">91.9</td><td class="n">4.81</td></tr>
+<tr><td>Jan 12, 2026</td><td class="n">20</td><td class="n">6.0</td><td class="n">-2.74 / -3.24</td><td class="n">91.0</td><td class="n">5.16</td></tr>
+<tr><td>Jan 15, 2026</td><td class="n">36</td><td class="n">8.4</td><td class="n">-2.39 / -3.09</td><td class="n">93.7</td><td class="n">5.94</td></tr>
+<tr><td>Jan 18, 2026</td><td class="n">18</td><td class="n">7.2</td><td class="n">-2.41 / -3.01</td><td class="n">92.7</td><td class="n">5.94</td></tr>
+<tr><td>Jan 21, 2026</td><td class="n">46</td><td class="n">7.2</td><td class="n">-2.64 / -3.24</td><td class="n">94.3</td><td class="n">5.76</td></tr>
+<tr class="off"><td>Jan 26, 2026 · 12:17 pm</td><td class="n">10</td><td class="n">—</td><td class="n">below detection threshold</td><td class="n">90.7</td><td class="n">5.58</td></tr>
+<tr><td>Jan 26, 2026 · 12:23 pm</td><td class="n">45</td><td class="n">7.6</td><td class="n">-2.74 / -3.37</td><td class="n">95.7</td><td class="n">6.03</td></tr>
+<tr><td>Jan 29, 2026</td><td class="n">15</td><td class="n">6.4</td><td class="n">-2.65 / -3.19</td><td class="n">92.1</td><td class="n">5.86</td></tr>
+<tr><td>Feb 1, 2026</td><td class="n">47</td><td class="n">7.2</td><td class="n">-2.52 / -3.12</td><td class="n">95.6</td><td class="n">5.87</td></tr>
+<tr><td>Feb 4, 2026</td><td class="n">16</td><td class="n">6.5</td><td class="n">-2.70 / -3.24</td><td class="n">92.1</td><td class="n">5.97</td></tr>
+<tr><td>Feb 6, 2026</td><td class="n">25</td><td class="n">8.5</td><td class="n">-2.46 / -3.17</td><td class="n">92.7</td><td class="n">6.18</td></tr>
+</tbody>
+</table>
+
+<p class="note">Extension for December 23 is withheld: seven pitches recorded no value and five returned 7.2 to 8.4 ft, which is not physically credible. Two sessions in the offseason window could not be retrieved and are absent — a six-pitcher group session on January 9 and a solo bullpen on January 3. The prior offseason, three sessions in January 2025, sits outside the portal's retention window. Together those account for 369 unretrieved pitches, roughly a third of the offseason. Recovering them would add a year-over-year comparison this report cannot make.</p>
+
+<h3>Conventions</h3>
+<p>Release side and height are reported at the true release point for both bullpen and game data, with the bullpen sign inverted to match. More negative is further to the arm side. Game figures were re-planed from the fixed tracking plane before joining, a correction worth 0.21 ft horizontally — the same order as the shifts under study. Bullpen pitch types were classified by shape rather than by the portal's tags, which were absent or wrong on roughly half the sessions.</p>
+</section>
+
+<footer>No Brand Baseball Analytics &nbsp;·&nbsp; August 30, 2026</footer>
+</div>
+
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('[role="tab"]'));
+  function show(id){
+    tabs.forEach(function(t){
+      var sel=t.id===id;
+      t.setAttribute('aria-selected',sel);
+      document.getElementById(t.getAttribute('aria-controls')).hidden=!sel;
+    });
+    window.scrollTo({top:0});
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){show(t.id);});
+    t.addEventListener('keydown',function(e){
+      var i=tabs.indexOf(t),n=null;
+      if(e.key==='ArrowRight')n=tabs[(i+1)%tabs.length];
+      if(e.key==='ArrowLeft')n=tabs[(i-1+tabs.length)%tabs.length];
+      if(n){e.preventDefault();n.focus();show(n.id);}
+    });
+  });
+
+  var U=[{"id": "pen_2025-12-12", "label": "Dec 12, 2025", "date": "2025-12-12", "context": "PEN", "ctxlabel": "Offseason bullpen", "gap_in": 6.1, "posA": -2.346, "posB": -2.854, "all": {"n": 14, "velo": 85.8, "velo_max": 89.8, "spin": 2130, "ivb": 13.0, "hb": 10.5, "ext": 5.88, "rs": -2.6, "rh": 6.307}, "shapes": {"FB": {"n": 8, "velo": 88.0, "velo_max": 89.8, "spin": 2146, "ivb": 16.6, "hb": 11.2, "ext": 5.92, "rs": -2.654, "rh": 6.319}, "OFFSPEED": {"n": 3, "velo": 83.2, "velo_max": 85.8, "spin": 1800, "ivb": 7.5, "hb": 17.8, "ext": 5.77, "rs": -2.517, "rh": 6.383}}}, {"id": "pen_2025-12-16", "label": "Dec 16, 2025", "date": "2025-12-16", "context": "PEN", "ctxlabel": "Offseason bullpen", "gap_in": 6.0, "posA": -2.238, "posB": -2.738, "all": {"n": 18, "velo": 85.3, "velo_max": 89.6, "spin": 2181, "ivb": 12.4, "hb": 7.2, "ext": 5.32, "rs": -2.516, "rh": 5.812}, "shapes": {"BREAKING": {"n": 4, "velo": 78.9, "velo_max": 80.9, "spin": 2508, "ivb": 7.7, "hb": -13.5, "ext": 5.1, "rs": -2.38, "rh": 5.752}, "FB": {"n": 9, "velo": 87.9, "velo_max": 89.6, "spin": 2214, "ivb": 17.0, "hb": 11.5, "ext": 5.38, "rs": -2.554, "rh": 5.8}, "OFFSPEED": {"n": 3, "velo": 84.2, "velo_max": 87.4, "spin": 1728, "ivb": 6.2, "hb": 18.4, "ext": 5.4, "rs": -2.623, "rh": 5.797}}}, {"id": "pen_2025-12-19", "label": "Dec 19, 2025", "date": "2025-12-19", "context": "PEN", "ctxlabel": "Offseason bullpen", "gap_in": 8.1, "posA": -2.268, "posB": -2.944, "all": {"n": 20, "velo": 85.2, "velo_max": 92.1, "spin": 2261, "ivb": 9.1, "hb": 5.2, "ext": 5.44, "rs": -2.673, "rh": 5.893}, "shapes": {"BREAKING": {"n": 6, "velo": 77.5, "velo_max": 78.8, "spin": 2515, "ivb": -1.6, "hb": -13.8, "ext": 5.02, "rs": -2.76, "rh": 5.915}, "FB": {"n": 10, "velo": 89.9, "velo_max": 92.1, "spin": 2196, "ivb": 16.0, "hb": 12.9, "ext": 5.72, "rs": -2.674, "rh": 5.922}, "OFFSPEED": {"n": 2, "velo": 85.6, "velo_max": 88.2, "spin": 1696, "ivb": 7.8, "hb": 17.0, "ext": 5.4, "rs": -2.54, "rh": 5.83}}}, {"id": "pen_2025-12-23", "label": "Dec 23, 2025", "date": "2025-12-23", "context": "PEN", "ctxlabel": "Offseason bullpen", "gap_in": 7.7, "posA": -2.341, "posB": -2.984, "all": {"n": 26, "velo": 84.4, "velo_max": 91.7, "spin": 2125, "ivb": 7.1, "hb": 8.7, "ext": null, "rs": -2.762, "rh": 5.54}, "shapes": {"BREAKING": {"n": 5, "velo": 76.4, "velo_max": 77.5, "spin": 2478, "ivb": -1.8, "hb": -17.6, "ext": null, "rs": -2.67, "rh": 5.436}, "FB": {"n": 11, "velo": 89.0, "velo_max": 91.7, "spin": 2230, "ivb": 14.4, "hb": 13.1, "ext": null, "rs": -2.689, "rh": 5.558}, "OFFSPEED": {"n": 7, "velo": 82.8, "velo_max": 86.0, "spin": 1663, "ivb": 1.9, "hb": 17.7, "ext": null, "rs": -3.016, "rh": 5.617}}}, {"id": "pen_2025-12-31", "label": "Dec 31, 2025", "date": "2025-12-31", "context": "PEN", "ctxlabel": "Offseason bullpen", "gap_in": 6.7, "posA": -2.382, "posB": -2.942, "all": {"n": 20, "velo": 85.3, "velo_max": 90.8, "spin": 2230, "ivb": 8.5, "hb": 5.8, "ext": 4.65, "rs": -2.634, "rh": 5.831}, "shapes": {"BREAKING": {"n": 5, "velo": 77.0, "velo_max": 79.0, "spin": 2444, "ivb": -4.0, "hb": -13.9, "ext": 4.52, "rs": -2.736, "rh": 5.824}, "FB": {"n": 9, "velo": 89.2, "velo_max": 90.8, "spin": 2333, "ivb": 17.3, "hb": 10.4, "ext": 4.73, "rs": -2.551, "rh": 5.832}, "OFFSPEED": {"n": 5, "velo": 86.4, "velo_max": 89.5, "spin": 1818, "ivb": 4.0, "hb": 18.0, "ext": 4.7, "rs": -2.736, "rh": 5.832}}}, {"id": "pen_2026-01-02", "label": "Jan 2, 2026", "date": "2026-01-02", "context": "PEN", "ctxlabel": "Offseason bullpen", "gap_in": null, "posA": null, "posB": null, "all": {"n": 7, "velo": 86.5, "velo_max": 88.7, "spin": 2063, "ivb": 17.5, "hb": 9.1, "ext": 4.77, "rs": -2.866, "rh": 6.061}, "shapes": {"FB": {"n": 6, "velo": 86.9, "velo_max": 88.7, "spin": 2060, "ivb": 17.7, "hb": 9.8, "ext": 4.83, "rs": -2.833, "rh": 6.047}}}, {"id": "pen_2026-01-06", "label": "Jan 6, 2026", "date": "2026-01-06", "context": "PEN", "ctxlabel": "Offseason bullpen", "gap_in": 6.0, "posA": -2.391, "posB": -2.894, "all": {"n": 19, "velo": 86.0, "velo_max": 91.9, "spin": 2088, "ivb": 7.1, "hb": 8.3, "ext": 4.81, "rs": -2.709, "rh": 5.713}, "shapes": {"BREAKING": {"n": 5, "velo": 78.3, "velo_max": 79.5, "spin": 2438, "ivb": -1.1, "hb": -14.2, "ext": 4.56, "rs": -2.83, "rh": 5.668}, "FB": {"n": 7, "velo": 90.7, "velo_max": 91.9, "spin": 2141, "ivb": 14.5, "hb": 14.4, "ext": 4.89, "rs": -2.566, "rh": 5.736}, "OFFSPEED": {"n": 5, "velo": 85.4, "velo_max": 89.2, "spin": 1630, "ivb": 5.1, "hb": 18.5, "ext": 4.96, "rs": -2.826, "rh": 5.722}}}, {"id": "pen_2026-01-12", "label": "Jan 12, 2026", "date": "2026-01-12", "context": "PEN", "ctxlabel": "Offseason bullpen", "gap_in": 6.0, "posA": -2.738, "posB": -3.238, "all": {"n": 20, "velo": 86.0, "velo_max": 91.0, "spin": 2197, "ivb": 11.3, "hb": 7.6, "ext": 5.15, "rs": -3.038, "rh": 5.992}, "shapes": {"BREAKING": {"n": 5, "velo": 78.6, "velo_max": 79.9, "spin": 2489, "ivb": 3.5, "hb": -8.9, "ext": 4.88, "rs": -3.006, "rh": 5.926}, "FB": {"n": 10, "velo": 89.3, "velo_max": 91.0, "spin": 2266, "ivb": 17.1, "hb": 10.8, "ext": 5.25, "rs": -3.062, "rh": 6.038}, "OFFSPEED": {"n": 2, "velo": 84.1, "velo_max": 84.7, "spin": 1527, "ivb": 7.2, "hb": 19.6, "ext": 5.25, "rs": -3.18, "rh": 6.01}}}, {"id": "pen_2026-01-15", "label": "Jan 15, 2026", "date": "2026-01-15", "context": "PEN", "ctxlabel": "Offseason bullpen", "gap_in": 8.4, "posA": -2.389, "posB": -3.093, "all": {"n": 36, "velo": 86.8, "velo_max": 93.7, "spin": 2210, "ivb": 9.1, "hb": 5.8, "ext": 5.94, "rs": -2.741, "rh": 5.518}, "shapes": {"BREAKING": {"n": 13, "velo": 80.0, "velo_max": 82.6, "spin": 2373, "ivb": 2.5, "hb": -10.6, "ext": 5.61, "rs": -2.805, "rh": 5.485}, "FB": {"n": 14, "velo": 92.3, "velo_max": 93.7, "spin": 2245, "ivb": 16.7, "hb": 12.4, "ext": 6.19, "rs": -2.711, "rh": 5.526}, "OFFSPEED": {"n": 5, "velo": 85.4, "velo_max": 90.9, "spin": 1710, "ivb": 6.5, "hb": 18.6, "ext": 6.04, "rs": -2.824, "rh": 5.534}}}, {"id": "pen_2026-01-18", "label": "Jan 18, 2026", "date": "2026-01-18", "context": "PEN", "ctxlabel": "Offseason bullpen", "gap_in": 7.2, "posA": -2.406, "posB": -3.007, "all": {"n": 18, "velo": 88.0, "velo_max": 92.7, "spin": 2206, "ivb": 8.1, "hb": 9.1, "ext": 5.94, "rs": -2.74, "rh": 5.394}, "shapes": {"BREAKING": {"n": 4, "velo": 80.2, "velo_max": 81.1, "spin": 2509, "ivb": 1.6, "hb": -10.9, "ext": 5.65, "rs": -2.805, "rh": 5.375}, "FB": {"n": 9, "velo": 91.7, "velo_max": 92.7, "spin": 2268, "ivb": 14.0, "hb": 13.3, "ext": 6.09, "rs": -2.7, "rh": 5.411}, "OFFSPEED": {"n": 5, "velo": 87.5, "velo_max": 91.9, "spin": 1853, "ivb": 2.6, "hb": 17.3, "ext": 5.92, "rs": -2.76, "rh": 5.38}}}, {"id": "pen_2026-01-21", "label": "Jan 21, 2026", "date": "2026-01-21", "context": "PEN", "ctxlabel": "Offseason bullpen", "gap_in": 7.2, "posA": -2.64, "posB": -3.238, "all": {"n": 46, "velo": 87.1, "velo_max": 94.3, "spin": 2237, "ivb": 8.1, "hb": 6.9, "ext": 5.76, "rs": -2.913, "rh": 5.289}, "shapes": {"BREAKING": {"n": 14, "velo": 79.8, "velo_max": 81.0, "spin": 2466, "ivb": 1.7, "hb": -10.2, "ext": 5.5, "rs": -2.961, "rh": 5.273}, "FB": {"n": 16, "velo": 92.4, "velo_max": 94.3, "spin": 2277, "ivb": 15.2, "hb": 12.8, "ext": 5.89, "rs": -2.771, "rh": 5.311}, "OFFSPEED": {"n": 11, "velo": 88.0, "velo_max": 92.2, "spin": 1851, "ivb": 4.9, "hb": 18.1, "ext": 5.87, "rs": -2.995, "rh": 5.288}}}, {"id": "pen_2026-01-261217pm", "label": "Jan 26, 2026 (12:17 pm)", "date": "2026-01-26", "context": "PEN", "ctxlabel": "Offseason bullpen", "gap_in": null, "posA": null, "posB": null, "all": {"n": 10, "velo": 83.8, "velo_max": 90.7, "spin": 2277, "ivb": 6.8, "hb": 4.6, "ext": 5.58, "rs": -3.012, "rh": 5.741}, "shapes": {"BREAKING": {"n": 4, "velo": 78.5, "velo_max": 78.9, "spin": 2548, "ivb": 0.7, "hb": -11.3, "ext": 5.48, "rs": -2.822, "rh": 5.587}, "FB": {"n": 3, "velo": 88.8, "velo_max": 90.7, "spin": 2298, "ivb": 17.8, "hb": 12.1, "ext": 5.73, "rs": -3.113, "rh": 5.837}, "OFFSPEED": {"n": 3, "velo": 86.1, "velo_max": 88.3, "spin": 1893, "ivb": 4.0, "hb": 18.2, "ext": 5.57, "rs": -3.163, "rh": 5.85}}}, {"id": "pen_2026-01-261223pm", "label": "Jan 26, 2026 (12:23 pm)", "date": "2026-01-26", "context": "PEN", "ctxlabel": "Offseason bullpen", "gap_in": 7.6, "posA": -2.739, "posB": -3.37, "all": {"n": 45, "velo": 85.4, "velo_max": 95.7, "spin": 2194, "ivb": 7.2, "hb": 3.0, "ext": 6.03, "rs": -3.118, "rh": 5.589}, "shapes": {"BREAKING": {"n": 19, "velo": 79.7, "velo_max": 81.4, "spin": 2472, "ivb": 2.2, "hb": -12.3, "ext": 5.84, "rs": -3.094, "rh": 5.547}, "FB": {"n": 16, "velo": 92.1, "velo_max": 95.7, "spin": 2224, "ivb": 15.6, "hb": 12.4, "ext": 6.23, "rs": -3.044, "rh": 5.632}, "OFFSPEED": {"n": 10, "velo": 85.5, "velo_max": 88.4, "spin": 1618, "ivb": 3.4, "hb": 16.9, "ext": 6.05, "rs": -3.283, "rh": 5.598}}}, {"id": "pen_2026-01-29", "label": "Jan 29, 2026", "date": "2026-01-29", "context": "PEN", "ctxlabel": "Offseason bullpen", "gap_in": 6.4, "posA": -2.655, "posB": -3.187, "all": {"n": 15, "velo": 86.4, "velo_max": 92.1, "spin": 2192, "ivb": 7.9, "hb": 5.5, "ext": 5.86, "rs": -2.903, "rh": 5.675}, "shapes": {"BREAKING": {"n": 5, "velo": 79.0, "velo_max": 80.0, "spin": 2487, "ivb": 3.5, "hb": -13.7, "ext": 5.48, "rs": -2.916, "rh": 5.654}, "FB": {"n": 6, "velo": 91.6, "velo_max": 92.1, "spin": 2151, "ivb": 14.1, "hb": 13.4, "ext": 6.12, "rs": -2.858, "rh": 5.69}, "OFFSPEED": {"n": 3, "velo": 87.3, "velo_max": 90.1, "spin": 1761, "ivb": 2.3, "hb": 16.6, "ext": 5.87, "rs": -3.03, "rh": 5.667}}}, {"id": "pen_2026-02-01", "label": "Feb 1, 2026", "date": "2026-02-01", "context": "PEN", "ctxlabel": "Offseason bullpen", "gap_in": 7.2, "posA": -2.523, "posB": -3.125, "all": {"n": 47, "velo": 87.0, "velo_max": 95.6, "spin": 2205, "ivb": 7.6, "hb": 6.3, "ext": 5.87, "rs": -2.766, "rh": 5.388}, "shapes": {"BREAKING": {"n": 16, "velo": 79.4, "velo_max": 81.2, "spin": 2451, "ivb": 1.9, "hb": -12.5, "ext": 5.66, "rs": -2.808, "rh": 5.356}, "FB": {"n": 16, "velo": 93.0, "velo_max": 95.6, "spin": 2189, "ivb": 15.1, "hb": 13.6, "ext": 5.96, "rs": -2.73, "rh": 5.438}, "OFFSPEED": {"n": 10, "velo": 88.2, "velo_max": 93.2, "spin": 1800, "ivb": 4.4, "hb": 18.9, "ext": 5.93, "rs": -2.744, "rh": 5.368}}}, {"id": "pen_2026-02-04", "label": "Feb 4, 2026", "date": "2026-02-04", "context": "PEN", "ctxlabel": "Offseason bullpen", "gap_in": 6.5, "posA": -2.699, "posB": -3.238, "all": {"n": 16, "velo": 84.3, "velo_max": 92.1, "spin": 2126, "ivb": 6.2, "hb": 7.6, "ext": 5.98, "rs": -2.968, "rh": 5.529}, "shapes": {"BREAKING": {"n": 5, "velo": 77.4, "velo_max": 78.4, "spin": 2434, "ivb": 0.9, "hb": -12.1, "ext": 5.74, "rs": -2.942, "rh": 5.45}, "FB": {"n": 5, "velo": 90.0, "velo_max": 92.1, "spin": 2220, "ivb": 14.5, "hb": 14.3, "ext": 6.0, "rs": -2.986, "rh": 5.604}, "OFFSPEED": {"n": 6, "velo": 85.4, "velo_max": 88.8, "spin": 1792, "ivb": 3.8, "hb": 18.5, "ext": 6.15, "rs": -2.975, "rh": 5.532}}}, {"id": "pen_2026-02-06", "label": "Feb 6, 2026", "date": "2026-02-06", "context": "PEN", "ctxlabel": "Offseason bullpen", "gap_in": 8.5, "posA": -2.465, "posB": -3.173, "all": {"n": 25, "velo": 86.1, "velo_max": 92.7, "spin": 2083, "ivb": 7.0, "hb": 7.0, "ext": 6.18, "rs": -2.833, "rh": 5.595}, "shapes": {"BREAKING": {"n": 7, "velo": 78.6, "velo_max": 79.9, "spin": 2471, "ivb": -0.9, "hb": -10.6, "ext": 5.94, "rs": -2.794, "rh": 5.499}, "FB": {"n": 10, "velo": 91.3, "velo_max": 92.7, "spin": 2056, "ivb": 14.6, "hb": 12.2, "ext": 6.41, "rs": -2.699, "rh": 5.614}, "OFFSPEED": {"n": 5, "velo": 85.5, "velo_max": 90.0, "spin": 1586, "ivb": 3.0, "hb": 16.0, "ext": 6.18, "rs": -2.994, "rh": 5.614}}}, {"id": "gm_2026-02-25", "label": "Feb 25, 2026 \u2014 vs ATL", "date": "2026-02-25", "context": "SPRING", "ctxlabel": "Spring training", "split_in": -6.4, "gap_in": null, "posA": null, "posB": null, "all": {"n": 53, "velo": 93.7, "velo_max": 99.0, "spin": 2239, "ivb": 9.2, "hb": 10.1, "ext": 6.76, "rs": -2.892, "rh": 5.697}, "shapes": {"BREAKING": {"n": 10, "velo": 83.9, "velo_max": 85.5, "spin": 2453, "ivb": 1.4, "hb": -10.1, "ext": 6.72, "rs": -2.923, "rh": 5.647}, "FB": {"n": 31, "velo": 97.6, "velo_max": 99.0, "spin": 2363, "ivb": 13.4, "hb": 14.1, "ext": 6.79, "rs": -2.821, "rh": 5.717}, "OFFSPEED": {"n": 12, "velo": 91.6, "velo_max": 94.8, "spin": 1740, "ivb": 4.8, "hb": 16.6, "ext": 6.72, "rs": -3.05, "rh": 5.688}}}, {"id": "gm_2026-03-03", "label": "Mar 3, 2026 \u2014 USA @ SF", "date": "2026-03-03", "context": "WBC_EXH", "ctxlabel": "WBC tune-up", "split_in": -7.4, "gap_in": null, "posA": null, "posB": null, "all": {"n": 40, "velo": 93.5, "velo_max": 99.7, "spin": 2096, "ivb": 8.8, "hb": 6.8, "ext": 6.58, "rs": -2.848, "rh": 5.599}, "shapes": {"BREAKING": {"n": 10, "velo": 84.3, "velo_max": 85.5, "spin": 2027, "ivb": 3.7, "hb": -9.5, "ext": 6.52, "rs": -2.941, "rh": 5.554}, "FB": {"n": 24, "velo": 97.9, "velo_max": 99.7, "spin": 2235, "ivb": 11.9, "hb": 11.9, "ext": 6.63, "rs": -2.788, "rh": 5.62}, "OFFSPEED": {"n": 6, "velo": 91.0, "velo_max": 94.7, "spin": 1655, "ivb": 4.4, "hb": 13.3, "ext": 6.48, "rs": -2.934, "rh": 5.589}}}, {"id": "gm_2026-03-09", "label": "Mar 9, 2026 \u2014 MEX vs USA (Pool)", "date": "2026-03-09", "context": "WBC", "ctxlabel": "World Baseball Classic", "split_in": -7.7, "gap_in": null, "posA": null, "posB": null, "all": {"n": 60, "velo": 94.3, "velo_max": 99.7, "spin": 2084, "ivb": 8.3, "hb": 12.4, "ext": 6.78, "rs": -2.997, "rh": 5.734}, "shapes": {"BREAKING": {"n": 6, "velo": 83.8, "velo_max": 85.0, "spin": 2400, "ivb": 8.0, "hb": -10.9, "ext": 6.81, "rs": -2.749, "rh": 5.679}, "FB": {"n": 37, "velo": 97.4, "velo_max": 99.7, "spin": 2221, "ivb": 10.7, "hb": 15.2, "ext": 6.79, "rs": -2.926, "rh": 5.75}, "OFFSPEED": {"n": 17, "velo": 91.3, "velo_max": 94.5, "spin": 1675, "ivb": 3.2, "hb": 14.6, "ext": 6.74, "rs": -3.239, "rh": 5.718}}}, {"id": "gm_2026-03-15", "label": "Mar 15, 2026 \u2014 USA @ DOM (Semifinal)", "date": "2026-03-15", "context": "WBC", "ctxlabel": "World Baseball Classic", "split_in": -7.0, "gap_in": null, "posA": null, "posB": null, "all": {"n": 71, "velo": 94.1, "velo_max": 99.2, "spin": 2124, "ivb": 8.2, "hb": 11.5, "ext": 6.52, "rs": -2.805, "rh": 5.56}, "shapes": {"BREAKING": {"n": 11, "velo": 84.5, "velo_max": 85.8, "spin": 2473, "ivb": 3.5, "hb": -9.4, "ext": 6.48, "rs": -2.804, "rh": 5.515}, "FB": {"n": 37, "velo": 97.6, "velo_max": 99.2, "spin": 2272, "ivb": 12.9, "hb": 15.1, "ext": 6.57, "rs": -2.763, "rh": 5.58}, "OFFSPEED": {"n": 23, "velo": 93.2, "velo_max": 96.0, "spin": 1719, "ivb": 2.9, "hb": 15.6, "ext": 6.47, "rs": -2.872, "rh": 5.549}}}, {"id": "gm_2026-03-21", "label": "Mar 21, 2026 \u2014 vs TOR", "date": "2026-03-21", "context": "SPRING", "ctxlabel": "Spring training", "split_in": -6.7, "gap_in": null, "posA": null, "posB": null, "all": {"n": 65, "velo": 91.8, "velo_max": 97.2, "spin": 2240, "ivb": 8.2, "hb": 7.7, "ext": 6.52, "rs": -2.719, "rh": 5.585}, "shapes": {"BREAKING": {"n": 16, "velo": 82.0, "velo_max": 85.9, "spin": 2408, "ivb": 1.0, "hb": -11.5, "ext": 6.34, "rs": -2.771, "rh": 5.537}, "FB": {"n": 44, "velo": 95.6, "velo_max": 97.2, "spin": 2206, "ivb": 10.9, "hb": 13.6, "ext": 6.6, "rs": -2.695, "rh": 5.603}, "OFFSPEED": {"n": 5, "velo": 90.3, "velo_max": 93.9, "spin": 2001, "ivb": 7.1, "hb": 16.4, "ext": 6.48, "rs": -2.755, "rh": 5.596}}}, {"id": "gm_2026-03-26", "label": "Mar 26, 2026 \u2014 vs New York Mets", "date": "2026-03-26", "context": "REGULAR", "ctxlabel": "Regular season", "split_in": null, "gap_in": null, "posA": null, "posB": null, "all": {"n": 37, "velo": 93.5, "velo_max": 98.7, "spin": 2302, "ivb": 9.1, "hb": 11.6, "ext": 6.71, "rs": -2.802, "rh": 5.675}, "shapes": {"BREAKING": {"n": 7, "velo": 84.9, "velo_max": 85.8, "spin": 2499, "ivb": 4.1, "hb": -7.8, "ext": 6.52, "rs": -2.63, "rh": 5.622}, "FB": {"n": 21, "velo": 97.8, "velo_max": 98.7, "spin": 2381, "ivb": 12.0, "hb": 15.3, "ext": 6.81, "rs": -2.778, "rh": 5.72}, "OFFSPEED": {"n": 9, "velo": 90.3, "velo_max": 95.3, "spin": 1963, "ivb": 6.2, "hb": 18.1, "ext": 6.62, "rs": -2.989, "rh": 5.614}}}, {"id": "gm_2026-04-01", "label": "Apr 1, 2026 \u2014 vs Cincinnati Reds", "date": "2026-04-01", "context": "REGULAR", "ctxlabel": "Regular season", "split_in": 2.4, "gap_in": null, "posA": null, "posB": null, "all": {"n": 77, "velo": 93.6, "velo_max": 98.8, "spin": 2219, "ivb": 8.0, "hb": 11.1, "ext": 6.87, "rs": -2.716, "rh": 5.54}, "shapes": {"BREAKING": {"n": 12, "velo": 83.1, "velo_max": 86.1, "spin": 2445, "ivb": 1.4, "hb": -9.6, "ext": 6.72, "rs": -2.708, "rh": 5.485}, "FB": {"n": 45, "velo": 97.4, "velo_max": 98.8, "spin": 2313, "ivb": 11.4, "hb": 14.7, "ext": 6.9, "rs": -2.691, "rh": 5.57}, "OFFSPEED": {"n": 20, "velo": 91.3, "velo_max": 94.7, "spin": 1873, "ivb": 4.4, "hb": 15.6, "ext": 6.89, "rs": -2.778, "rh": 5.508}}}, {"id": "gm_2026-04-07", "label": "Apr 7, 2026 \u2014 vs San Diego Padres", "date": "2026-04-07", "context": "REGULAR", "ctxlabel": "Regular season", "split_in": 5.6, "gap_in": null, "posA": null, "posB": null, "all": {"n": 87, "velo": 93.1, "velo_max": 97.8, "spin": 2255, "ivb": 9.9, "hb": 12.3, "ext": 6.79, "rs": -2.869, "rh": 5.536}, "shapes": {"BREAKING": {"n": 17, "velo": 83.4, "velo_max": 84.9, "spin": 2455, "ivb": 8.0, "hb": -8.4, "ext": 6.84, "rs": -2.969, "rh": 5.477}, "FB": {"n": 58, "velo": 96.6, "velo_max": 97.8, "spin": 2271, "ivb": 11.3, "hb": 16.9, "ext": 6.8, "rs": -2.857, "rh": 5.563}, "OFFSPEED": {"n": 12, "velo": 89.9, "velo_max": 93.7, "spin": 1898, "ivb": 5.9, "hb": 19.6, "ext": 6.69, "rs": -2.787, "rh": 5.486}}}, {"id": "gm_2026-04-13", "label": "Apr 13, 2026 \u2014 vs Washington Nationals", "date": "2026-04-13", "context": "REGULAR", "ctxlabel": "Regular season", "split_in": null, "gap_in": null, "posA": null, "posB": null, "all": {"n": 88, "velo": 90.6, "velo_max": 99.5, "spin": 2144, "ivb": 6.8, "hb": 7.3, "ext": 6.79, "rs": -2.407, "rh": 5.49}, "shapes": {"BREAKING": {"n": 22, "velo": 82.9, "velo_max": 84.9, "spin": 2440, "ivb": 0.9, "hb": -13.7, "ext": 6.74, "rs": -2.438, "rh": 5.46}, "FB": {"n": 31, "velo": 97.4, "velo_max": 99.5, "spin": 2273, "ivb": 11.6, "hb": 12.7, "ext": 6.82, "rs": -2.362, "rh": 5.549}, "OFFSPEED": {"n": 35, "velo": 89.3, "velo_max": 95.1, "spin": 1845, "ivb": 6.1, "hb": 15.7, "ext": 6.8, "rs": -2.428, "rh": 5.456}}}, {"id": "gm_2026-04-18", "label": "Apr 18, 2026 \u2014 vs Tampa Bay Rays", "date": "2026-04-18", "context": "REGULAR", "ctxlabel": "Regular season", "split_in": null, "gap_in": null, "posA": null, "posB": null, "all": {"n": 64, "velo": 92.7, "velo_max": 98.2, "spin": 2122, "ivb": 7.1, "hb": 7.0, "ext": 6.68, "rs": -2.631, "rh": 5.527}, "shapes": {"BREAKING": {"n": 13, "velo": 84.0, "velo_max": 85.0, "spin": 2420, "ivb": 3.5, "hb": -12.1, "ext": 6.65, "rs": -2.766, "rh": 5.486}, "FB": {"n": 31, "velo": 97.1, "velo_max": 98.2, "spin": 2241, "ivb": 10.6, "hb": 11.6, "ext": 6.69, "rs": -2.551, "rh": 5.561}, "OFFSPEED": {"n": 20, "velo": 91.6, "velo_max": 95.1, "spin": 1745, "ivb": 3.9, "hb": 12.2, "ext": 6.67, "rs": -2.668, "rh": 5.502}}}, {"id": "gm_2026-04-24", "label": "Apr 24, 2026 \u2014 vs Milwaukee Brewers", "date": "2026-04-24", "context": "REGULAR", "ctxlabel": "Regular season", "split_in": null, "gap_in": null, "posA": null, "posB": null, "all": {"n": 93, "velo": 94.7, "velo_max": 98.7, "spin": 1968, "ivb": 6.6, "hb": 10.0, "ext": 6.91, "rs": -2.584, "rh": 5.675}, "shapes": {"BREAKING": {"n": 11, "velo": 83.5, "velo_max": 85.4, "spin": 2342, "ivb": 5.1, "hb": -13.9, "ext": 6.75, "rs": -2.781, "rh": 5.607}, "FB": {"n": 52, "velo": 97.7, "velo_max": 98.7, "spin": 2141, "ivb": 11.0, "hb": 13.6, "ext": 6.94, "rs": -2.536, "rh": 5.687}, "OFFSPEED": {"n": 30, "velo": 93.5, "velo_max": 94.9, "spin": 1531, "ivb": -0.5, "hb": 12.5, "ext": 6.92, "rs": -2.597, "rh": 5.679}}}, {"id": "gm_2026-04-30", "label": "Apr 30, 2026 \u2014 vs St. Louis Cardinals", "date": "2026-04-30", "context": "REGULAR", "ctxlabel": "Regular season", "split_in": 1.1, "gap_in": null, "posA": null, "posB": null, "all": {"n": 102, "velo": 91.9, "velo_max": 97.8, "spin": 2061, "ivb": 7.5, "hb": 11.9, "ext": 6.63, "rs": -2.653, "rh": 5.572}, "shapes": {"BREAKING": {"n": 15, "velo": 84.1, "velo_max": 85.6, "spin": 2447, "ivb": 6.6, "hb": -10.1, "ext": 6.56, "rs": -2.667, "rh": 5.507}, "FB": {"n": 40, "velo": 96.7, "velo_max": 97.8, "spin": 2194, "ivb": 11.7, "hb": 15.0, "ext": 6.61, "rs": -2.627, "rh": 5.618}, "OFFSPEED": {"n": 47, "velo": 90.4, "velo_max": 93.6, "spin": 1825, "ivb": 4.3, "hb": 16.3, "ext": 6.67, "rs": -2.671, "rh": 5.554}}}, {"id": "gm_2026-05-06", "label": "May 6, 2026 \u2014 vs Arizona Diamondbacks", "date": "2026-05-06", "context": "REGULAR", "ctxlabel": "Regular season", "split_in": 6.3, "gap_in": null, "posA": null, "posB": null, "all": {"n": 97, "velo": 93.3, "velo_max": 98.4, "spin": 2048, "ivb": 8.2, "hb": 10.8, "ext": 6.69, "rs": -2.546, "rh": 5.753}, "shapes": {"BREAKING": {"n": 14, "velo": 84.1, "velo_max": 85.4, "spin": 2413, "ivb": 5.7, "hb": -9.0, "ext": 6.54, "rs": -2.646, "rh": 5.682}, "FB": {"n": 49, "velo": 97.1, "velo_max": 98.4, "spin": 2169, "ivb": 11.6, "hb": 13.8, "ext": 6.71, "rs": -2.469, "rh": 5.773}, "OFFSPEED": {"n": 34, "velo": 91.6, "velo_max": 94.9, "spin": 1724, "ivb": 4.2, "hb": 14.7, "ext": 6.72, "rs": -2.616, "rh": 5.754}}}, {"id": "gm_2026-05-12", "label": "May 12, 2026 \u2014 vs Colorado Rockies", "date": "2026-05-12", "context": "REGULAR", "ctxlabel": "Regular season", "split_in": 2.1, "gap_in": null, "posA": null, "posB": null, "all": {"n": 98, "velo": 91.6, "velo_max": 98.0, "spin": 2124, "ivb": 8.4, "hb": 9.2, "ext": 6.71, "rs": -2.254, "rh": 5.591}, "shapes": {"BREAKING": {"n": 22, "velo": 83.6, "velo_max": 86.7, "spin": 2372, "ivb": 3.8, "hb": -8.2, "ext": 6.66, "rs": -2.314, "rh": 5.508}, "FB": {"n": 49, "velo": 96.3, "velo_max": 98.0, "spin": 2208, "ivb": 12.5, "hb": 13.7, "ext": 6.73, "rs": -2.222, "rh": 5.623}, "OFFSPEED": {"n": 27, "velo": 89.6, "velo_max": 94.0, "spin": 1769, "ivb": 4.6, "hb": 15.2, "ext": 6.7, "rs": -2.265, "rh": 5.601}}}, {"id": "gm_2026-05-17", "label": "May 17, 2026 \u2014 vs Philadelphia Phillies", "date": "2026-05-17", "context": "REGULAR", "ctxlabel": "Regular season", "split_in": 4.7, "gap_in": null, "posA": null, "posB": null, "all": {"n": 92, "velo": 93.5, "velo_max": 98.4, "spin": 2086, "ivb": 7.1, "hb": 10.6, "ext": 6.75, "rs": -2.473, "rh": 5.529}, "shapes": {"BREAKING": {"n": 13, "velo": 85.9, "velo_max": 87.1, "spin": 2371, "ivb": 1.8, "hb": -7.3, "ext": 6.82, "rs": -2.582, "rh": 5.444}, "FB": {"n": 50, "velo": 97.1, "velo_max": 98.4, "spin": 2195, "ivb": 10.2, "hb": 13.7, "ext": 6.74, "rs": -2.439, "rh": 5.553}, "OFFSPEED": {"n": 29, "velo": 90.6, "velo_max": 94.3, "spin": 1770, "ivb": 4.1, "hb": 13.4, "ext": 6.74, "rs": -2.483, "rh": 5.525}}}, {"id": "gm_2026-05-23", "label": "May 23, 2026 \u2014 vs Toronto Blue Jays", "date": "2026-05-23", "context": "REGULAR", "ctxlabel": "Regular season", "split_in": 5.4, "gap_in": null, "posA": null, "posB": null, "all": {"n": 98, "velo": 92.9, "velo_max": 98.2, "spin": 2118, "ivb": 8.0, "hb": 9.4, "ext": 6.62, "rs": -2.433, "rh": 5.686}, "shapes": {"BREAKING": {"n": 21, "velo": 84.8, "velo_max": 89.6, "spin": 2435, "ivb": 5.6, "hb": -11.8, "ext": 6.6, "rs": -2.558, "rh": 5.619}, "FB": {"n": 52, "velo": 96.8, "velo_max": 98.2, "spin": 2184, "ivb": 11.5, "hb": 15.3, "ext": 6.63, "rs": -2.391, "rh": 5.716}, "OFFSPEED": {"n": 25, "velo": 91.6, "velo_max": 94.1, "spin": 1715, "ivb": 2.9, "hb": 14.7, "ext": 6.62, "rs": -2.415, "rh": 5.681}}}, {"id": "gm_2026-05-28", "label": "May 28, 2026 \u2014 vs Chicago Cubs", "date": "2026-05-28", "context": "REGULAR", "ctxlabel": "Regular season", "split_in": 1.6, "gap_in": null, "posA": null, "posB": null, "all": {"n": 103, "velo": 92.0, "velo_max": 99.4, "spin": 2137, "ivb": 8.7, "hb": 7.1, "ext": 6.78, "rs": -2.308, "rh": 5.587}, "shapes": {"BREAKING": {"n": 31, "velo": 85.6, "velo_max": 88.5, "spin": 2365, "ivb": 5.1, "hb": -8.4, "ext": 6.81, "rs": -2.371, "rh": 5.523}, "FB": {"n": 42, "velo": 97.4, "velo_max": 99.4, "spin": 2202, "ivb": 13.3, "hb": 12.9, "ext": 6.79, "rs": -2.247, "rh": 5.638}, "OFFSPEED": {"n": 30, "velo": 90.9, "velo_max": 95.0, "spin": 1810, "ivb": 5.9, "hb": 15.1, "ext": 6.74, "rs": -2.328, "rh": 5.581}}}, {"id": "gm_2026-06-03", "label": "Jun 3, 2026 \u2014 vs Houston Astros", "date": "2026-06-03", "context": "REGULAR", "ctxlabel": "Regular season", "split_in": null, "gap_in": null, "posA": null, "posB": null, "all": {"n": 109, "velo": 92.0, "velo_max": 98.8, "spin": 2230, "ivb": 9.0, "hb": 7.6, "ext": 6.63, "rs": -2.636, "rh": 5.814}, "shapes": {"BREAKING": {"n": 33, "velo": 84.4, "velo_max": 87.9, "spin": 2420, "ivb": 3.2, "hb": -9.2, "ext": 6.58, "rs": -2.689, "rh": 5.778}, "FB": {"n": 57, "velo": 96.8, "velo_max": 98.8, "spin": 2253, "ivb": 13.3, "hb": 14.3, "ext": 6.68, "rs": -2.572, "rh": 5.845}, "OFFSPEED": {"n": 19, "velo": 90.4, "velo_max": 94.5, "spin": 1829, "ivb": 6.2, "hb": 16.8, "ext": 6.6, "rs": -2.732, "rh": 5.783}}}, {"id": "gm_2026-06-09", "label": "Jun 9, 2026 \u2014 vs Los Angeles Dodgers", "date": "2026-06-09", "context": "REGULAR", "ctxlabel": "Regular season", "split_in": 0.0, "gap_in": null, "posA": null, "posB": null, "all": {"n": 103, "velo": 92.5, "velo_max": 98.2, "spin": 2081, "ivb": 8.3, "hb": 8.2, "ext": 6.76, "rs": -2.28, "rh": 5.524}, "shapes": {"BREAKING": {"n": 25, "velo": 85.6, "velo_max": 87.2, "spin": 2287, "ivb": 3.0, "hb": -6.0, "ext": 6.79, "rs": -2.339, "rh": 5.478}, "FB": {"n": 53, "velo": 96.9, "velo_max": 98.2, "spin": 2156, "ivb": 12.4, "hb": 11.9, "ext": 6.76, "rs": -2.202, "rh": 5.56}, "OFFSPEED": {"n": 25, "velo": 89.9, "velo_max": 94.2, "spin": 1715, "ivb": 4.8, "hb": 14.5, "ext": 6.71, "rs": -2.388, "rh": 5.497}}}, {"id": "gm_2026-06-14", "label": "Jun 14, 2026 \u2014 vs Miami Marlins", "date": "2026-06-14", "context": "REGULAR", "ctxlabel": "Regular season", "split_in": 1.3, "gap_in": null, "posA": null, "posB": null, "all": {"n": 104, "velo": 91.9, "velo_max": 98.3, "spin": 2074, "ivb": 7.1, "hb": 4.9, "ext": 6.77, "rs": -2.284, "rh": 5.535}, "shapes": {"BREAKING": {"n": 33, "velo": 85.3, "velo_max": 88.2, "spin": 2245, "ivb": 2.7, "hb": -9.6, "ext": 6.81, "rs": -2.337, "rh": 5.469}, "FB": {"n": 48, "velo": 96.8, "velo_max": 98.3, "spin": 2128, "ivb": 11.6, "hb": 11.2, "ext": 6.75, "rs": -2.206, "rh": 5.586}, "OFFSPEED": {"n": 23, "velo": 91.3, "velo_max": 94.7, "spin": 1718, "ivb": 4.0, "hb": 12.5, "ext": 6.74, "rs": -2.373, "rh": 5.522}}}, {"id": "gm_2026-06-20", "label": "Jun 20, 2026 \u2014 vs Colorado Rockies", "date": "2026-06-20", "context": "REGULAR", "ctxlabel": "Regular season", "split_in": 0.3, "gap_in": null, "posA": null, "posB": null, "all": {"n": 104, "velo": 92.2, "velo_max": 98.6, "spin": 2075, "ivb": 7.5, "hb": 6.5, "ext": 6.88, "rs": -2.137, "rh": 5.592}, "shapes": {"BREAKING": {"n": 21, "velo": 86.1, "velo_max": 88.7, "spin": 2354, "ivb": 1.9, "hb": -6.2, "ext": 6.96, "rs": -2.165, "rh": 5.522}, "FB": {"n": 54, "velo": 96.5, "velo_max": 98.6, "spin": 2126, "ivb": 11.0, "hb": 10.2, "ext": 6.89, "rs": -2.098, "rh": 5.626}, "OFFSPEED": {"n": 29, "velo": 88.7, "velo_max": 90.2, "spin": 1779, "ivb": 5.2, "hb": 8.9, "ext": 6.79, "rs": -2.189, "rh": 5.581}}}, {"id": "gm_2026-06-26", "label": "Jun 26, 2026 \u2014 vs Cincinnati Reds", "date": "2026-06-26", "context": "REGULAR", "ctxlabel": "Regular season", "split_in": 1.4, "gap_in": null, "posA": null, "posB": null, "all": {"n": 96, "velo": 91.9, "velo_max": 98.2, "spin": 2108, "ivb": 8.4, "hb": 5.8, "ext": 6.77, "rs": -2.162, "rh": 5.546}, "shapes": {"BREAKING": {"n": 34, "velo": 85.7, "velo_max": 89.2, "spin": 2302, "ivb": 4.2, "hb": -7.7, "ext": 6.75, "rs": -2.196, "rh": 5.494}, "FB": {"n": 49, "velo": 96.8, "velo_max": 98.2, "spin": 2088, "ivb": 11.9, "hb": 13.0, "ext": 6.79, "rs": -2.124, "rh": 5.576}, "OFFSPEED": {"n": 13, "velo": 90.1, "velo_max": 94.5, "spin": 1680, "ivb": 6.4, "hb": 13.8, "ext": 6.76, "rs": -2.217, "rh": 5.572}}}, {"id": "gm_2026-07-01", "label": "Jul 1, 2026 \u2014 vs Philadelphia Phillies", "date": "2026-07-01", "context": "REGULAR", "ctxlabel": "Regular season", "split_in": 3.1, "gap_in": null, "posA": null, "posB": null, "all": {"n": 81, "velo": 92.0, "velo_max": 97.9, "spin": 1972, "ivb": 7.7, "hb": 7.0, "ext": 6.84, "rs": -2.256, "rh": 5.689}, "shapes": {"BREAKING": {"n": 27, "velo": 86.3, "velo_max": 89.6, "spin": 2204, "ivb": 4.7, "hb": -5.6, "ext": 6.87, "rs": -2.272, "rh": 5.621}, "FB": {"n": 37, "velo": 96.3, "velo_max": 97.9, "spin": 1979, "ivb": 12.4, "hb": 12.8, "ext": 6.84, "rs": -2.242, "rh": 5.731}, "OFFSPEED": {"n": 17, "velo": 91.5, "velo_max": 93.9, "spin": 1586, "ivb": 2.2, "hb": 14.5, "ext": 6.79, "rs": -2.26, "rh": 5.705}}}, {"id": "gm_2026-07-07", "label": "Jul 7, 2026 \u2014 vs Atlanta Braves", "date": "2026-07-07", "context": "REGULAR", "ctxlabel": "Regular season", "split_in": 0.5, "gap_in": null, "posA": null, "posB": null, "all": {"n": 95, "velo": 93.8, "velo_max": 98.2, "spin": 2040, "ivb": 8.9, "hb": 11.0, "ext": 6.78, "rs": -2.104, "rh": 5.515}, "shapes": {"BREAKING": {"n": 14, "velo": 85.7, "velo_max": 88.2, "spin": 2195, "ivb": 5.2, "hb": -6.0, "ext": 6.83, "rs": -2.177, "rh": 5.438}, "FB": {"n": 54, "velo": 97.1, "velo_max": 98.2, "spin": 2145, "ivb": 11.9, "hb": 13.7, "ext": 6.79, "rs": -2.044, "rh": 5.542}, "OFFSPEED": {"n": 27, "velo": 91.4, "velo_max": 94.1, "spin": 1751, "ivb": 4.8, "hb": 14.4, "ext": 6.76, "rs": -2.185, "rh": 5.501}}}, {"id": "gm_2026-07-12", "label": "Jul 12, 2026 \u2014 vs Milwaukee Brewers", "date": "2026-07-12", "context": "REGULAR", "ctxlabel": "Regular season", "split_in": 0.3, "gap_in": null, "posA": null, "posB": null, "all": {"n": 82, "velo": 92.5, "velo_max": 97.4, "spin": 2089, "ivb": 9.0, "hb": 7.6, "ext": 6.72, "rs": -2.158, "rh": 5.535}, "shapes": {"BREAKING": {"n": 23, "velo": 85.1, "velo_max": 87.6, "spin": 2255, "ivb": 3.8, "hb": -6.4, "ext": 6.71, "rs": -2.241, "rh": 5.46}, "FB": {"n": 49, "velo": 96.1, "velo_max": 97.4, "spin": 2083, "ivb": 12.5, "hb": 12.8, "ext": 6.73, "rs": -2.109, "rh": 5.562}, "OFFSPEED": {"n": 10, "velo": 91.4, "velo_max": 93.8, "spin": 1737, "ivb": 3.6, "hb": 14.8, "ext": 6.67, "rs": -2.203, "rh": 5.575}}}, {"id": "gm_2026-07-19", "label": "Jul 19, 2026 \u2014 vs Cleveland Guardians", "date": "2026-07-19", "context": "REGULAR", "ctxlabel": "Regular season", "split_in": -0.0, "gap_in": null, "posA": null, "posB": null, "all": {"n": 100, "velo": 93.8, "velo_max": 97.9, "spin": 2070, "ivb": 9.2, "hb": 11.1, "ext": 6.73, "rs": -2.107, "rh": 5.54}, "shapes": {"BREAKING": {"n": 12, "velo": 84.5, "velo_max": 88.2, "spin": 2305, "ivb": 4.8, "hb": -9.0, "ext": 6.74, "rs": -2.185, "rh": 5.466}, "FB": {"n": 63, "velo": 96.7, "velo_max": 97.9, "spin": 2156, "ivb": 12.3, "hb": 13.6, "ext": 6.74, "rs": -2.066, "rh": 5.553}, "OFFSPEED": {"n": 25, "velo": 91.2, "velo_max": 94.5, "spin": 1739, "ivb": 3.6, "hb": 14.5, "ext": 6.71, "rs": -2.17, "rh": 5.541}}}, {"id": "gm_2026-07-25", "label": "Jul 25, 2026 \u2014 vs Chicago Cubs", "date": "2026-07-25", "context": "REGULAR", "ctxlabel": "Regular season", "split_in": -1.0, "gap_in": null, "posA": null, "posB": null, "all": {"n": 105, "velo": 91.2, "velo_max": 97.8, "spin": 2133, "ivb": 8.7, "hb": 6.2, "ext": 6.76, "rs": -2.17, "rh": 5.565}, "shapes": {"BREAKING": {"n": 34, "velo": 84.9, "velo_max": 88.0, "spin": 2314, "ivb": 5.2, "hb": -7.9, "ext": 6.79, "rs": -2.207, "rh": 5.502}, "FB": {"n": 49, "velo": 96.3, "velo_max": 97.8, "spin": 2183, "ivb": 12.7, "hb": 12.6, "ext": 6.75, "rs": -2.097, "rh": 5.605}, "OFFSPEED": {"n": 22, "velo": 89.7, "velo_max": 93.9, "spin": 1742, "ivb": 5.1, "hb": 13.9, "ext": 6.72, "rs": -2.278, "rh": 5.575}}}, {"id": "gm_2026-07-31", "label": "Jul 31, 2026 \u2014 vs Cincinnati Reds", "date": "2026-07-31", "context": "REGULAR", "ctxlabel": "Regular season", "split_in": -0.1, "gap_in": null, "posA": null, "posB": null, "all": {"n": 100, "velo": 92.6, "velo_max": 97.8, "spin": 2113, "ivb": 9.0, "hb": 8.2, "ext": 6.84, "rs": -2.04, "rh": 5.546}, "shapes": {"BREAKING": {"n": 33, "velo": 86.0, "velo_max": 90.5, "spin": 2269, "ivb": 4.9, "hb": -5.3, "ext": 6.85, "rs": -2.071, "rh": 5.489}, "FB": {"n": 57, "velo": 96.5, "velo_max": 97.8, "spin": 2093, "ivb": 12.1, "hb": 14.6, "ext": 6.83, "rs": -2.013, "rh": 5.582}, "OFFSPEED": {"n": 10, "velo": 92.1, "velo_max": 94.3, "spin": 1714, "ivb": 4.9, "hb": 15.8, "ext": 6.88, "rs": -2.095, "rh": 5.536}}}, {"id": "gm_2026-08-05", "label": "Aug 5, 2026 \u2014 vs Milwaukee Brewers", "date": "2026-08-05", "context": "REGULAR", "ctxlabel": "Regular season", "split_in": 0.7, "gap_in": null, "posA": null, "posB": null, "all": {"n": 93, "velo": 91.9, "velo_max": 99.0, "spin": 2163, "ivb": 7.0, "hb": 5.9, "ext": 6.85, "rs": -2.058, "rh": 5.633}, "shapes": {"BREAKING": {"n": 38, "velo": 85.9, "velo_max": 88.5, "spin": 2290, "ivb": 2.8, "hb": -5.7, "ext": 6.87, "rs": -2.087, "rh": 5.618}, "FB": {"n": 48, "velo": 97.0, "velo_max": 99.0, "spin": 2127, "ivb": 10.6, "hb": 13.7, "ext": 6.85, "rs": -2.023, "rh": 5.641}, "OFFSPEED": {"n": 7, "velo": 89.8, "velo_max": 93.7, "spin": 1726, "ivb": 5.1, "hb": 15.0, "ext": 6.75, "rs": -2.131, "rh": 5.663}}}, {"id": "gm_2026-08-11", "label": "Aug 11, 2026 \u2014 vs Miami Marlins", "date": "2026-08-11", "context": "REGULAR", "ctxlabel": "Regular season", "split_in": -0.9, "gap_in": null, "posA": null, "posB": null, "all": {"n": 65, "velo": 92.5, "velo_max": 96.5, "spin": 1959, "ivb": 8.2, "hb": 10.8, "ext": 6.69, "rs": -2.541, "rh": 5.538}, "shapes": {"BREAKING": {"n": 11, "velo": 84.8, "velo_max": 86.2, "spin": 2205, "ivb": 5.3, "hb": -6.1, "ext": 6.64, "rs": -2.584, "rh": 5.452}, "FB": {"n": 35, "velo": 95.7, "velo_max": 96.5, "spin": 2066, "ivb": 12.2, "hb": 14.0, "ext": 6.71, "rs": -2.506, "rh": 5.561}, "OFFSPEED": {"n": 19, "velo": 91.2, "velo_max": 92.7, "spin": 1621, "ivb": 2.6, "hb": 14.6, "ext": 6.66, "rs": -2.58, "rh": 5.544}}}, {"id": "gm_2026-08-19", "label": "Aug 19, 2026 \u2014 vs Detroit Tigers", "date": "2026-08-19", "context": "REGULAR", "ctxlabel": "Regular season", "split_in": -0.8, "gap_in": null, "posA": null, "posB": null, "all": {"n": 81, "velo": 93.6, "velo_max": 97.9, "spin": 2092, "ivb": 8.8, "hb": 8.0, "ext": 6.77, "rs": -2.825, "rh": 5.521}, "shapes": {"BREAKING": {"n": 16, "velo": 85.1, "velo_max": 88.7, "spin": 2272, "ivb": 4.5, "hb": -9.4, "ext": 6.78, "rs": -2.928, "rh": 5.44}, "FB": {"n": 52, "velo": 96.8, "velo_max": 97.9, "spin": 2146, "ivb": 11.7, "hb": 12.0, "ext": 6.79, "rs": -2.78, "rh": 5.54}, "OFFSPEED": {"n": 13, "velo": 91.2, "velo_max": 93.8, "spin": 1656, "ivb": 2.3, "hb": 13.4, "ext": 6.69, "rs": -2.88, "rh": 5.547}}}, {"id": "gm_2026-08-25", "label": "Aug 25, 2026 \u2014 vs San Diego Padres", "date": "2026-08-25", "context": "REGULAR", "ctxlabel": "Regular season", "split_in": -0.4, "gap_in": null, "posA": null, "posB": null, "all": {"n": 87, "velo": 93.2, "velo_max": 98.6, "spin": 2041, "ivb": 7.9, "hb": 9.7, "ext": 6.79, "rs": -2.64, "rh": 5.621}, "shapes": {"BREAKING": {"n": 22, "velo": 85.8, "velo_max": 89.0, "spin": 2162, "ivb": 5.1, "hb": -5.2, "ext": 6.82, "rs": -2.659, "rh": 5.624}, "FB": {"n": 49, "velo": 97.0, "velo_max": 98.6, "spin": 2110, "ivb": 10.5, "hb": 14.9, "ext": 6.79, "rs": -2.619, "rh": 5.613}, "OFFSPEED": {"n": 16, "velo": 91.9, "velo_max": 94.7, "spin": 1661, "ivb": 3.8, "hb": 14.4, "ext": 6.76, "rs": -2.679, "rh": 5.64}}}];
+  var byId={}; U.forEach(function(u){byId[u.id]=u;});
+  var selL=document.getElementById('selL'),selR=document.getElementById('selR');
+
+  function fill(sel){
+    var groups=[['Offseason bullpens',function(u){return u.context==='PEN';}],
+                ['Spring training',function(u){return u.context==='SPRING';}],
+                ['World Baseball Classic',function(u){return u.context==='WBC'||u.context==='WBC_EXH';}],
+                ['Regular season',function(u){return u.context==='REGULAR';}]];
+    groups.forEach(function(g){
+      var og=document.createElement('optgroup'); og.label=g[0];
+      U.filter(g[1]).forEach(function(u){
+        var o=document.createElement('option'); o.value=u.id; o.textContent=u.label; og.appendChild(o);
+      });
+      sel.appendChild(og);
+    });
+  }
+  fill(selL); fill(selR);
+  selL.value='pen_2026-02-06';
+  selR.value='gm_2026-02-25';
+
+  var shape='all';
+  document.querySelectorAll('.shapebar button').forEach(function(b){
+    b.addEventListener('click',function(){
+      shape=b.dataset.shape;
+      document.querySelectorAll('.shapebar button').forEach(function(x){x.setAttribute('aria-pressed',x===b);});
+      render();
+    });
+  });
+  selL.addEventListener('change',render); selR.addEventListener('change',render);
+
+  var ROWS=[['n','Pitches',0,''],['velo','Velocity',1,' mph'],['velo_max','Peak velocity',1,' mph'],
+            ['spin','Spin rate',0,' rpm'],['ivb','Induced vert break',1,' in'],['hb','Horizontal break',1,' in'],
+            ['ext','Extension',2,' ft'],['rs','Release side',3,' ft'],['rh','Release height',3,' ft']];
+
+  function block(u){ return shape==='all' ? u.all : (u.shapes[shape]||null); }
+
+  function render(){
+    var L=byId[selL.value],R=byId[selR.value];
+    document.getElementById('hL').innerHTML=L.label+'<span class="ctxtag">'+L.ctxlabel+'</span>';
+    document.getElementById('hR').innerHTML=R.label+'<span class="ctxtag">'+R.ctxlabel+'</span>';
+    var bl=block(L),br=block(R),tb=document.getElementById('cmpbody');
+    tb.innerHTML='';
+    if(!bl||!br){
+      tb.innerHTML='<tr><td colspan="4">No pitches of this type in one of the selected sessions. Choose another pitch group.</td></tr>';
+      document.getElementById('cmpnote').textContent='';
+      return;
+    }
+    ROWS.forEach(function(r){
+      var k=r[0],dp=r[2],un=r[3],a=bl[k],b=br[k];
+      if(a==null||b==null) return;
+      var d=b-a, cls = k==='n' ? 'flat' : (Math.abs(d)<Math.pow(10,-dp)/2?'flat':(d>0?'up':'dn'));
+      var ds = k==='n' ? (d>0?'+':'')+d : (d>0?'+':'')+d.toFixed(dp)+un;
+      tb.insertAdjacentHTML('beforeend','<tr><td>'+r[1]+'</td><td class="n">'+a.toFixed(dp)+un+
+        '</td><td class="n">'+b.toFixed(dp)+un+'</td><td class="d '+cls+'">'+ds+'</td></tr>');
+    });
+    var notes=[];
+    if(L.gap_in) notes.push(L.label+' shows two-position work with a '+L.gap_in+' inch gap.');
+    if(R.gap_in) notes.push(R.label+' shows two-position work with a '+R.gap_in+' inch gap.');
+    if(L.split_in!=null) notes.push(L.label+' handedness split: '+(L.split_in>0?'+':'')+L.split_in+' in.');
+    if(R.split_in!=null) notes.push(R.label+' handedness split: '+(R.split_in>0?'+':'')+R.split_in+' in.');
+    if(L.context==='PEN'&&R.context!=='PEN') notes.push('Bullpen against game: expect roughly −6 mph and −0.44 ft of extension from effort alone.');
+    document.getElementById('cmpnote').textContent=notes.join(' ');
+  }
+  render();
+})();
+</script>
+</body>
+</html>
